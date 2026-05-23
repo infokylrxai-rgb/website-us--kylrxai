@@ -91,11 +91,6 @@ body {
   border-radius: 8px;
   object-fit: contain;
   border: 2px solid rgba(14, 165, 233, 0.2);
-  transition: transform var(--transition-speed) var(--transition-bounce);
-}
-
-.nav-brand:hover .nav-logo {
-  transform: rotate(15deg) scale(1.08);
 }
 
 .nav-links {
