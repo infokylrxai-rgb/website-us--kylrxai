@@ -86,10 +86,10 @@ body {
 }
 
 .nav-logo {
-  height: 38px;
-  width: 38px;
-  border-radius: 50%;
-  object-fit: cover;
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
   border: 2px solid rgba(14, 165, 233, 0.2);
   transition: transform var(--transition-speed) var(--transition-bounce);
 }
@@ -887,10 +887,10 @@ footer {
 }
 
 .footer-logo {
-  height: 38px;
-  width: 38px;
-  border-radius: 50%;
-  object-fit: cover;
+  height: 48px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
   border: 2px solid rgba(14, 165, 233, 0.2);
 }
 
