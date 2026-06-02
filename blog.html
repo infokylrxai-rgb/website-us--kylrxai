@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kylrx AI Insights - 100+ Blogs on Workforce & Payroll Automation</title>
+  <meta name="description" content="Explore Kylrx AI's library of 100+ professional insights, tutorials, and strategy guides on automated payroll, employee monitoring, and labor compliance.">
+  
+  <!-- Plus Jakarta Sans & Inter Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Global & Custom Blog Styles -->
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --primary-light: #eff6ff;
+      --secondary-color: #0ea5e9;
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 16px -6px rgba(15, 23, 42, 0.04);
+      --card-shadow-hover: 0 20px 35px -5px rgba(15, 23, 42, 0.08), 0 12px 20px -8px rgba(15, 23, 42, 0.08);
+      --border-radius-lg: 16px;
+      --border-radius-sm: 8px;
+      --transition-speed: 0.3s;
+      --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-top: 80px; /* Space for navbar */
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ════════════════════════════════ NAVBAR ════════════════════════════════ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 8%;
+      z-index: 1000;
+      transition: all var(--transition-speed);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo {
+      height: 40px;
+      width: auto;
+      border-radius: var(--border-radius-sm);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2.5rem;
+    }
+
+    .nav-links a {
+      font-size: 0.95rem;
+      font-weight: 550;
+      color: var(--text-muted);
+      transition: color var(--transition-speed);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-cta-btn {
+      background: var(--primary-color);
+      color: #ffffff;
+      padding: 0.7rem 1.4rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all var(--transition-speed) var(--transition-bounce);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
+    }
+
+    .nav-cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
+    }
+
+    /* ════════════════════════════════ HERO ════════════════════════════════ */
+    .hero {
+      background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
+      padding: 5.5rem 5% 4.5rem 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+      top: -100px;
+      right: -100px;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 3rem;
+      color: var(--text-main);
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* ════════════════════════════════ CONTROLS SECTION ════════════════════════════════ */
+    .controls-container {
+      max-width: 1200px;
+      margin: -2rem auto 3rem auto;
+      background: #ffffff;
+      border-radius: var(--border-radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      z-index: 10;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .search-box {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      border: 1.5px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: all var(--transition-speed);
+      color: var(--text-main);
+    }
+
+    .search-input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.15rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .categories-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .cat-btn {
+      padding: 0.6rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      background: var(--primary-light);
+      color: var(--primary-color);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+    }
+
+    .cat-btn.active, .cat-btn:hover {
+      background: var(--primary-color);
+      color: #ffffff;
+    }
+
+    /* ════════════════════════════════ BLOG GRID ════════════════════════════════ */
+    .blog-section {
+      max-width: 1200px;
+      margin: 0 auto 4rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.25rem;
+    }
+
+    .blog-card {
+      background: var(--bg-secondary);
+      border-radius: var(--border-radius-lg);
+      border: 1px solid rgba(14, 165, 233, 0.05);
+      box-shadow: var(--card-shadow);
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all var(--transition-speed) var(--transition-bounce);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .blog-cat-badge {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 0.35rem 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cat-badge-ai { background: #e0f2fe; color: #0369a1; }
+    .cat-badge-payroll { background: #fef3c7; color: #b45309; }
+    .cat-badge-tvc { background: #ecfdf5; color: #047857; }
+    .cat-badge-strategy { background: #f3e8ff; color: #6b21a8; }
+    .cat-badge-tech { background: #e0f8ff; color: #0d9488; }
+
+    .blog-card-title {
+      font-size: 1.35rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      transition: color var(--transition-speed);
+    }
+
+    .blog-card:hover .blog-card-title {
+      color: var(--primary-color);
+    }
+
+    .blog-card-teaser {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-top: 1.5px solid var(--border-color);
+      padding-top: 1.25rem;
+    }
+
+    .blog-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .blog-meta-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-author-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .blog-meta-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ════════════════════════════════ PAGINATION ════════════════════════════════ */
+    .pagination-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 4rem;
+    }
+
+    .page-btn {
+      padding: 0.7rem 1.25rem;
+      border: 1.5px solid var(--border-color);
+      background: #ffffff;
+      border-radius: var(--border-radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all var(--transition-speed);
+    }
+
+    .page-btn:hover:not(:disabled) {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    .page-btn.active {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      color: #ffffff;
+    }
+
+    .page-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: #ffffff;
+      border-radius: var(--border-radius-lg);
+      border: 1.5px dashed var(--border-color);
+    }
+
+    .no-results svg {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* ════════════════════════════════ ARTICLE MODAL ════════════════════════════════ */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-speed);
+      padding: 2rem;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      width: 100%;
+      max-width: 800px;
+      max-height: 85vh;
+      border-radius: var(--border-radius-lg);
+      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+      display: flex;
+      flex-direction: column;
+      transform: translateY(30px);
+      transition: transform var(--transition-speed) var(--transition-bounce);
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .modal-backdrop.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      padding: 2rem 2.5rem 1.5rem 2.5rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .modal-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .modal-title {
+      font-size: 1.75rem;
+      line-height: 1.3;
+      color: var(--text-main);
+    }
+
+    .modal-close-btn {
+      background: var(--primary-light);
+      border: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--primary-color);
+      transition: all var(--transition-speed);
+      flex-shrink: 0;
+    }
+
+    .modal-close-btn:hover {
+      background: var(--primary-color);
+      color: #ffffff;
+      transform: rotate(90deg);
+    }
+
+    .modal-scroll-body {
+      padding: 2.5rem;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+
+    .modal-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1.5px solid var(--border-color);
+    }
+
+    .modal-body-content p {
+      font-size: 1.05rem;
+      color: #334155;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .modal-body-content h4 {
+      font-size: 1.25rem;
+      color: var(--text-main);
+      margin: 2rem 0 1rem 0;
+    }
+
+    .modal-body-content ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .modal-body-content li {
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+      color: #334155;
+    }
+
+    /* ════════════════════════════════ FOOTER ════════════════════════════════ */
+    footer {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 5rem 8% 2rem 8%;
+      margin-top: 6rem;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .footer-brand {
+      max-width: 400px;
+    }
+
+    .footer-logo {
+      height: 40px;
+      border-radius: var(--border-radius-sm);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-desc {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* ════════════════════════════════ RESPONSIVE ════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: 70px;
+      }
+      .navbar {
+        height: 70px;
+        padding: 0 5%;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero-title {
+        font-size: 2.25rem;
+      }
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      .controls-container {
+        padding: 1.25rem;
+      }
+      .modal-card {
+        max-height: 95vh;
+      }
+      .modal-scroll-body {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════ NAVBAR ════════════════════════════════ -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.jpg" alt="Kylrx AI Logo" class="nav-logo" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#why">Features</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="index.html#footer">Contact</a></li>
+    </ul>
+    <a href="index.html#pricing" class="nav-cta-btn">Get Started</a>
+  </nav>
+
+  <!-- ════════════════════════════════ HERO ════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Kylrx AI <span>Insights &amp; Resource Hub</span></h1>
+      <p class="hero-subtitle">Master automated HR operations, enterprise tax calculations, labor law compliance, and biometric timekeeping with our comprehensive library of articles.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ CONTROLS SECTION ════════════════════════════════ -->
+  <section class="controls-container">
+    <div class="search-box">
+      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search across 100+ resource articles, topics, compliance policies...">
+    </div>
+    <div class="categories-row" id="categoriesRow">
+      <button class="cat-btn active" data-category="All">All Topics</button>
+      <button class="cat-btn" data-category="AI & Automation">AI &amp; Automation</button>
+      <button class="cat-btn" data-category="Payroll & Tax">Payroll &amp; Tax</button>
+      <button class="cat-btn" data-category="Compliance & TVC">Compliance &amp; TVC</button>
+      <button class="cat-btn" data-category="HR Strategy">HR Strategy</button>
+      <button class="cat-btn" data-category="Workforce Tech">Workforce Tech</button>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ BLOG GRID ════════════════════════════════ -->
+  <main class="blog-section">
+    <div class="blog-grid" id="blogGrid">
+      <!-- Generated blog cards will be dynamically rendered here -->
+    </div>
+
+    <!-- Pagination Controller -->
+    <div class="pagination-container" id="pagination">
+      <!-- Pagination buttons rendered here -->
+    </div>
+  </main>
+
+  <!-- ════════════════════════════════ ARTICLE DETAIL MODAL ════════════════════════════════ -->
+  <div class="modal-backdrop" id="articleModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="blog-cat-badge cat-badge-ai" id="modalBadge">AI &amp; Automation</span>
+          <h2 class="modal-title" id="modalTitle">Article Title</h2>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close article">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-scroll-body">
+        <div class="modal-meta-row">
+          <div class="blog-avatar" id="modalAvatar">P</div>
+          <div class="blog-meta-details">
+            <span class="blog-author-name" id="modalAuthor">Priya Sharma</span>
+            <span class="blog-meta-sub" id="modalDate">May 24, 2026 • 5 min read</span>
+          </div>
+        </div>
+        <div class="modal-body-content" id="modalBody">
+          <!-- Article HTML content -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════ FOOTER ════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.jpg" alt="Kylrx AI" class="footer-logo" />
+        <p class="footer-desc">AI-powered HRMS platform built for modern enterprises. Automate HR, boost productivity, and stay compliant — effortlessly.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Kylrx AI. All rights reserved. Built with ❤️ for modern HR teams.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════ BLOG GENERATOR & RENDERER JAVASCRIPT ════════════════════════════════ -->
+  <script>
+    // 100 Blogs dynamic dataset generator
+    const prefixes = [
+      "How to Optimize", "The Future of", "A Complete Guide to", "Next-Gen", "Understanding",
+      "Leveraging AI for", "Mastering", "Why Modern Teams Love", "Scaling", "The ROI of"
+    ];
+
+    const topics = [
+      "Automated Payroll Systems", "Real-Time Compliance Auditing", "Workforce Scheduling & Rostering",
+      "Trust & Verification Centers (TVC)", "Biometric Attendance Systems", "AI-Powered Leave Management",
+      "Custom Roster Allocations", "AES-256 Data Protection", "Single Sign-On (SSO) Protocols",
+      "Tax & Provident Fund Computations", "Remote Workforce Productivity", "Labor Law Compliance",
+      "Dynamic Shift Operations", "Anomaly and Mismatch Tracking", "Employee Self-Service Portals"
+    ];
+
+    const endings = [
+      "in 2026", "for Scaling Startups", "for Enterprise Organizations", "with Zero Manual Effort",
+      "to Double Operational Efficiency", "for Hybrid Workforces", "to Mitigate Audit Risks",
+      "with Bank-Grade Security", "to Drive Employee Retention", "for Modern HR Teams"
+    ];
+
+    const categories = ['AI & Automation', 'Payroll & Tax', 'Compliance & TVC', 'HR Strategy', 'Workforce Tech'];
+    const authors = ['Priya Sharma', 'Vikram Malhotra', 'Rahul Mehta', 'Ananya Iyer', 'Meera Nair', 'Arjun Sen', 'Sneha Reddy', 'Kabir Das'];
+
+    // Generate exactly 100 professional blogs
+    const generateBlogs = () => {
+      const list = [];
+      let pIdx = 0, tIdx = 0, eIdx = 0;
+      
+      while (list.length < 100) {
+        const prefix = prefixes[pIdx];
+        const topic = topics[tIdx];
+        const ending = endings[eIdx];
+        
+        const title = `${prefix} ${topic} ${ending}`;
+        const category = categories[tIdx % categories.length];
+        const author = authors[(pIdx + tIdx + eIdx) % authors.length];
+        
+        // Date offset back in time
+        const dateObj = new Date();
+        dateObj.setDate(dateObj.getDate() - (list.length * 2));
+        const dateString = dateObj.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        });
+        
+        const readTime = `${3 + ((pIdx + tIdx) % 6)} min read`;
+        const summary = `Learn how implementing smart, secure methods for ${topic.toLowerCase()} can drastically lower your operating overhead, eliminate statutory penalties, and enhance trust across hybrid corporate teams.`;
+        
+        const content = `
+          <p>Managing modern workforce operations requires balancing scale, security, and administrative efficiency. When handling <strong>${topic}</strong>, traditional manual spreadsheets quickly fail due to human errors, tax mismatches, and compliance oversights.</p>
+          
+          <p>By implementing a unified cloud HRMS platform like Kylrx AI, HR teams can completely automate these processes. Using state-of-the-art anomaly checks and high-fidelity cloud sync, administrative friction is minimized by up to 85%.</p>
+          
+          <h4>Key Best Practices:</h4>
+          <ul>
+            <li><strong>Automated Validation:</strong> Validate biometric and clock-in rosters against central compliance profiles.</li>
+            <li><strong>Proactive Mismatch Alerts:</strong> Detect shift overlaps or payroll variations instantly before ledger finalization.</li>
+            <li><strong>Self-Service Access:</strong> Empower employees to download their statutory records and manage roster leaves autonomously.</li>
+          </ul>
+          
+          <p>Embracing these technologies is no longer optional for scaling enterprises. By automating ${topic.toLowerCase()} ${ending}, you completely safeguard your corporate records, optimize organizational productivity, and provide your team with a premium, friction-free employee experience.</p>
+        `;
+
+        list.push({
+          id: list.length + 1,
+          title,
+          category,
+          author,
+          date: dateString,
+          readTime,
+          summary,
+          content
+        });
+
+        // Advance indices
+        eIdx = (eIdx + 1) % endings.length;
+        if (eIdx === 0) {
+          tIdx = (tIdx + 1) % topics.length;
+          if (tIdx === 0) {
+            pIdx = (pIdx + 1) % prefixes.length;
+          }
+        }
+      }
+      return list;
+    };
+
+    const allBlogs = generateBlogs();
+    let filteredBlogs = [...allBlogs];
+    
+    // Pagination state
+    const itemsPerPage = 9;
+    let currentPage = 1;
+
+    // Elements
+    const blogGrid = document.getElementById('blogGrid');
+    const pagination = document.getElementById('pagination');
+    const searchInput = document.getElementById('searchInput');
+    const categoriesRow = document.getElementById('categoriesRow');
+    
+    // Modal Elements
+    const articleModal = document.getElementById('articleModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBadge = document.getElementById('modalBadge');
+    const modalAvatar = document.getElementById('modalAvatar');
+    const modalAuthor = document.getElementById('modalAuthor');
+    const modalDate = document.getElementById('modalDate');
+    const modalBody = document.getElementById('modalBody');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+    // Get badge CSS class by category
+    const getBadgeClass = (cat) => {
+      switch (cat) {
+        case 'AI & Automation': return 'cat-badge-ai';
+        case 'Payroll & Tax': return 'cat-badge-payroll';
+        case 'Compliance & TVC': return 'cat-badge-tvc';
+        case 'HR Strategy': return 'cat-badge-strategy';
+        case 'Workforce Tech': return 'cat-badge-tech';
+        default: return 'cat-badge-ai';
+      }
+    };
+
+    // Render a single page of blogs
+    const renderBlogs = () => {
+      blogGrid.innerHTML = '';
+      
+      if (filteredBlogs.length === 0) {
+        blogGrid.innerHTML = `
+          <div class="no-results">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <h3>No Articles Found</h3>
+            <p style="color:var(--text-muted);margin-top:0.5rem;">Try adjusting your keywords or selecting a different category.</p>
+          </div>
+        `;
+        pagination.innerHTML = '';
+        return;
+      }
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = Math.min(startIndex + itemsPerPage, filteredBlogs.length);
+      const pageItems = filteredBlogs.slice(startIndex, endIndex);
+
+      pageItems.forEach(blog => {
+        const badgeClass = getBadgeClass(blog.category);
+        
+        const card = document.createElement('div');
+        card.className = 'blog-card';
+        card.innerHTML = `
+          <div>
+            <span class="blog-cat-badge ${badgeClass}">${blog.category}</span>
+            <h3 class="blog-card-title">${blog.title}</h3>
+            <p class="blog-card-teaser">${blog.summary}</p>
+          </div>
+          <div class="blog-card-meta">
+            <div class="blog-avatar">${blog.author.charAt(0)}</div>
+            <div class="blog-meta-details">
+              <span class="blog-author-name">${blog.author}</span>
+              <span class="blog-meta-sub">${blog.date} • ${blog.readTime}</span>
+            </div>
+          </div>
+        `;
+
+        card.addEventListener('click', () => openArticle(blog.id));
+        blogGrid.appendChild(card);
+      });
+
+      renderPagination();
+    };
+
+    // Render Pagination Controls
+    const renderPagination = () => {
+      pagination.innerHTML = '';
+      const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
+      if (totalPages <= 1) return;
+
+      // Prev Button
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'page-btn';
+      prevBtn.textContent = 'Prev';
+      prevBtn.disabled = currentPage === 1;
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderBlogs();
+          window.scrollTo({ top: 400, behavior: 'smooth' });
+        }
+      });
+      pagination.appendChild(prevBtn);
+
+      // Page numbers (max 5 displayed, standard sliding pagination)
+      let startPage = Math.max(1, currentPage - 2);
+      let endPage = Math.min(totalPages, startPage + 4);
+      
+      if (endPage - startPage < 4) {
+        startPage = Math.max(1, endPage - 4);
+      }
+
+      for (let i = startPage; i <= endPage; i++) {
+        const numBtn = document.createElement('button');
+        numBtn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
+        numBtn.textContent = i;
+        numBtn.addEventListener('click', () => {
+          currentPage = i;
+          renderBlogs();
+          window.scrollTo({ top: 400, behavior: 'smooth' });
+        });
+        pagination.appendChild(numBtn);
+      }
+
+      // Next Button
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'page-btn';
+      nextBtn.textContent = 'Next';
+      nextBtn.disabled = currentPage === totalPages;
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderBlogs();
+          window.scrollTo({ top: 400, behavior: 'smooth' });
+        }
+      });
+      pagination.appendChild(nextBtn);
+    };
+
+    // Open Dynamic Modal
+    const openArticle = (id) => {
+      const blog = allBlogs.find(b => b.id === id);
+      if (!blog) return;
+
+      // Reset badge classes and add current
+      modalBadge.className = `blog-cat-badge ${getBadgeClass(blog.category)}`;
+      modalBadge.textContent = blog.category;
+      
+      modalTitle.textContent = blog.title;
+      modalAvatar.textContent = blog.author.charAt(0);
+      modalAuthor.textContent = blog.author;
+      modalDate.textContent = `${blog.date} • ${blog.readTime}`;
+      modalBody.innerHTML = blog.content;
+
+      // Active modal classes
+      articleModal.classList.add('active');
+      articleModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    // Close Modal
+    const closeArticle = () => {
+      articleModal.classList.remove('active');
+      articleModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+
+    modalCloseBtn.addEventListener('click', closeArticle);
+    articleModal.addEventListener('click', (e) => {
+      if (e.target === articleModal) closeArticle();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && articleModal.classList.contains('active')) {
+        closeArticle();
+      }
+    });
+
+    // Filtering & Searching Logic
+    let currentCategory = 'All';
+    let searchQuery = '';
+
+    const filterAndSearch = () => {
+      filteredBlogs = allBlogs.filter(blog => {
+        const matchesCategory = currentCategory === 'All' || blog.category === currentCategory;
+        const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                             blog.summary.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      currentPage = 1; // Reset to page 1 on filter
+      renderBlogs();
+    };
+
+    // Search input event
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      filterAndSearch();
+    });
+
+    // Category pill click event
+    categoriesRow.addEventListener('click', (e) => {
+      const clickedBtn = e.target.closest('.cat-btn');
+      if (!clickedBtn) return;
+
+      categoriesRow.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
+      clickedBtn.classList.add('active');
+
+      currentCategory = clickedBtn.getAttribute('data-category');
+      filterAndSearch();
+    });
+
+    // Initial render
+    renderBlogs();
+  </script>
+</body>
+</html>
