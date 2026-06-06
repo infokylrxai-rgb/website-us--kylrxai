@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollNavigation();
   initDocModal();
   initTestimonialSlider();
+  initContactSalesModal();
 });
 
 /**
@@ -570,5 +571,116 @@ function initTestimonialSlider() {
   track.addEventListener('touchend', () => {
     isSwiping = false;
   }, { passive: true });
+}
+
+/**
+ * Contact Sales & Razorpay Integration Modal
+ */
+function initContactSalesModal() {
+  const modal = document.getElementById('contactSalesModal');
+  const overlay = document.getElementById('contactSalesOverlay');
+  const closeBtn = document.getElementById('contactSalesClose');
+  const form = document.getElementById('contactSalesForm');
+  const submitBtn = document.getElementById('contactSalesSubmitBtn');
+  const planInput = document.getElementById('contactPlanInput');
+  const modalSub = document.getElementById('contactSalesSub');
+  
+  if (!modal || !overlay || !closeBtn || !form || !submitBtn || !planInput || !modalSub) return;
+
+  let activeRazorpayUrl = '';
+
+  // Intercept clicks on the three specific pricing cards
+  const pricingCards = document.querySelectorAll('.pricing-card');
+  pricingCards.forEach(card => {
+    const badge = card.querySelector('.card-badge');
+    if (!badge) return;
+    
+    const badgeText = badge.textContent.toLowerCase();
+    const isStarter = badgeText.includes('starter');
+    const isGrowth = badgeText.includes('best selling') || badgeText.includes('growth');
+    const isScale = badgeText.includes('scale');
+    
+    if (isStarter || isGrowth || isScale) {
+      const btn = card.querySelector('.btn-card');
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const planName = card.querySelector('.plan-name').textContent.trim();
+          activeRazorpayUrl = btn.getAttribute('href');
+          
+          planInput.value = planName;
+          modalSub.textContent = `Fill out your details to secure your ${planName} and proceed to payment.`;
+          
+          // Open Modal
+          modal.classList.add('active');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+          
+          // Auto-focus first input
+          const firstInput = document.getElementById('contactName');
+          if (firstInput) firstInput.focus();
+        });
+      }
+    }
+  });
+
+  // Close modal helper
+  const closeModal = () => {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    form.reset();
+  };
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+  
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
+  // Submit Handler using Web3Forms & Redirect to Razorpay
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    formData.append("access_key", "87322638-b287-40fd-a6e8-fef7d943e863");
+
+    const submitSpan = submitBtn.querySelector('span');
+    const originalText = submitSpan ? submitSpan.textContent : "Proceed to Payment";
+
+    if (submitSpan) submitSpan.textContent = "Processing...";
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        // Open Razorpay link in a new tab
+        if (activeRazorpayUrl) {
+          window.open(activeRazorpayUrl, '_blank', 'noopener,noreferrer');
+        }
+        
+        alert("Success! Your details have been submitted. Redirecting to payment...");
+        closeModal();
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      if (submitSpan) submitSpan.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
 }
 

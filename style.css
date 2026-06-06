@@ -1381,3 +1381,44 @@ footer {
   margin-bottom: 0.75rem;
   font-weight: 600;
 }
+
+/* ════════════════════════════════ CONTACT SALES FORM ════════════════════════════════ */
+.contact-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  text-align: left;
+}
+
+.contact-form-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.2px;
+}
+
+.contact-form-input {
+  width: 100%;
+  padding: 0.85rem 1.15rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 550;
+  color: var(--text-main);
+  outline: none;
+  background-color: #ffffff;
+  transition: all var(--transition-speed);
+}
+
+.contact-form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  background-color: #ffffff;
+}
+
+.contact-form-input::placeholder {
+  color: var(--text-light);
+  font-weight: 400;
+}
