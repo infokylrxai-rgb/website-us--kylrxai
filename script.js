@@ -1,9 +1,12 @@
+import { db } from "./firebase-config.js";
+import { collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-firestore.js";
+
 /**
  * Kylrx AI - Landing Page Interactions
  * Handles pricing billing toggle, responsive navbar, hamburger menu, and smooth scrolling.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+function init() {
   initNavbarScroll();
   initMobileMenu();
   initBillingToggle();
@@ -11,7 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initDocModal();
   initTestimonialSlider();
   initContactSalesModal();
-});
+}
+
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  init();
+} else {
+  document.addEventListener('DOMContentLoaded', init);
+}
 
 /**
  * Adds a modern glassmorphism effect to the navbar when the user scrolls down.
@@ -657,6 +666,7 @@ function initContactSalesModal() {
     submitBtn.disabled = true;
 
     try {
+      // 1. Submit to Web3Forms for email notifications
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
@@ -665,7 +675,23 @@ function initContactSalesModal() {
       const data = await response.json();
 
       if (response.ok) {
-        // Open Razorpay link in a new tab
+        // 2. Save lead data directly to Firebase Firestore
+        try {
+          await addDoc(collection(db, "leads"), {
+            name: formData.get("name") || "",
+            email: formData.get("email") || "",
+            phone: formData.get("phone") || "",
+            plan: formData.get("plan") || planInput.value || "Unknown",
+            createdAt: serverTimestamp(),
+            source: "marketing_website",
+            status: "New"
+          });
+          console.log("✅ Lead successfully saved to Firebase Firestore backend");
+        } catch (firestoreError) {
+          console.error("Firestore lead save failed:", firestoreError);
+        }
+
+        // 3. Open Razorpay link in a new tab and close modal
         if (activeRazorpayUrl) {
           window.open(activeRazorpayUrl, '_blank', 'noopener,noreferrer');
         }
