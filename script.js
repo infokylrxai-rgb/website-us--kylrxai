@@ -598,40 +598,30 @@ function initContactSalesModal() {
 
   let activeRazorpayUrl = '';
 
-  // Intercept clicks on the three specific pricing cards
+  // Intercept clicks on the pricing cards
   const pricingCards = document.querySelectorAll('.pricing-card');
   pricingCards.forEach(card => {
-    const badge = card.querySelector('.card-badge');
-    if (!badge) return;
-    
-    const badgeText = badge.textContent.toLowerCase();
-    const isStarter = badgeText.includes('starter');
-    const isGrowth = badgeText.includes('best selling') || badgeText.includes('growth');
-    const isScale = badgeText.includes('scale');
-    
-    if (isStarter || isGrowth || isScale) {
-      const btn = card.querySelector('.btn-card');
-      if (btn) {
-        btn.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          
-          const planName = card.querySelector('.plan-name').textContent.trim();
-          activeRazorpayUrl = btn.getAttribute('href');
-          
-          planInput.value = planName;
-          modalSub.textContent = `Fill out your details to secure your ${planName} and proceed to payment.`;
-          
-          // Open Modal
-          modal.classList.add('active');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-          
-          // Auto-focus first input
-          const firstInput = document.getElementById('contactName');
-          if (firstInput) firstInput.focus();
-        });
-      }
+    const btn = card.querySelector('.btn-card');
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const planName = card.querySelector('.plan-name').textContent.trim();
+        activeRazorpayUrl = btn.getAttribute('href');
+        
+        planInput.value = planName;
+        modalSub.textContent = `Fill out your details to secure your ${planName} and proceed to payment.`;
+        
+        // Open Modal
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        
+        // Auto-focus first input
+        const firstInput = document.getElementById('contactName');
+        if (firstInput) firstInput.focus();
+      });
     }
   });
 

@@ -414,6 +414,12 @@ body {
   align-items: stretch;
 }
 
+.cards-grid.single-plan {
+  display: flex;
+  justify-content: center;
+  max-width: 460px;
+}
+
 .pricing-card {
   background: #ffffff;
   border-radius: var(--border-radius-lg);
