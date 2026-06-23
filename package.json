@@ -1,0 +1,8 @@
+{
+  "name": "website-kylrxai-us",
+  "version": "1.0.0",
+  "description": "Kylrx AI HRMS enterprise SaaS landing page.",
+  "scripts": {
+    "dev": "npx -y http-server -p 8000"
+  }
+}

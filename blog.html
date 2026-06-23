@@ -1,1016 +1,681 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3F6VW2MEJG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3F6VW2MEJG');
-  </script>
-  <title>Kylrx AI Insights - 100+ Blogs on Workforce & Payroll Automation</title>
-  <meta name="description" content="Explore Kylrx AI's library of 100+ professional insights, tutorials, and strategy guides on automated payroll, employee monitoring, and labor compliance.">
-  
-  <!-- Plus Jakarta Sans & Inter Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Global & Custom Blog Styles -->
-  <style>
-    :root {
-      --primary-color: #2563eb;
-      --primary-light: #eff6ff;
-      --secondary-color: #0ea5e9;
-      --bg-primary: #f8fafc;
-      --bg-secondary: #ffffff;
-      --text-main: #0f172a;
-      --text-muted: #64748b;
-      --border-color: #e2e8f0;
-      --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 8px 16px -6px rgba(15, 23, 42, 0.04);
-      --card-shadow-hover: 0 20px 35px -5px rgba(15, 23, 42, 0.08), 0 12px 20px -8px rgba(15, 23, 42, 0.08);
-      --border-radius-lg: 16px;
-      --border-radius-sm: 8px;
-      --transition-speed: 0.3s;
-      --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-primary);
-      color: var(--text-main);
-      line-height: 1.6;
-      overflow-x: hidden;
-      padding-top: 80px; /* Space for navbar */
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ════════════════════════════════ NAVBAR ════════════════════════════════ */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 80px;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 8%;
-      z-index: 1000;
-      transition: all var(--transition-speed);
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-    }
-
-    .nav-logo {
-      height: 40px;
-      width: auto;
-      border-radius: var(--border-radius-sm);
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2.5rem;
-    }
-
-    .nav-links a {
-      font-size: 0.95rem;
-      font-weight: 550;
-      color: var(--text-muted);
-      transition: color var(--transition-speed);
-    }
-
-    .nav-links a:hover {
-      color: var(--primary-color);
-    }
-
-    .nav-cta-btn {
-      background: var(--primary-color);
-      color: #ffffff;
-      padding: 0.7rem 1.4rem;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all var(--transition-speed) var(--transition-bounce);
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
-    }
-
-    .nav-cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
-    }
-
-    /* ════════════════════════════════ HERO ════════════════════════════════ */
-    .hero {
-      background: linear-gradient(135deg, #eef2ff 0%, #e0f2fe 100%);
-      padding: 5.5rem 5% 4.5rem 5%;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-glow {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
-      top: -100px;
-      right: -100px;
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      color: var(--text-main);
-      margin-bottom: 1.25rem;
-      line-height: 1.2;
-    }
-
-    .hero-title span {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
-    }
-
-    /* ════════════════════════════════ CONTROLS SECTION ════════════════════════════════ */
-    .controls-container {
-      max-width: 1200px;
-      margin: -2rem auto 3rem auto;
-      background: #ffffff;
-      border-radius: var(--border-radius-lg);
-      padding: 1.75rem 2rem;
-      box-shadow: var(--card-shadow);
-      position: relative;
-      z-index: 10;
-      border: 1px solid rgba(226, 232, 240, 0.8);
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .search-box {
-      position: relative;
-      width: 100%;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 1rem 1rem 1rem 3rem;
-      border: 1.5px solid var(--border-color);
-      border-radius: var(--border-radius-lg);
-      font-size: 1rem;
-      font-family: inherit;
-      outline: none;
-      transition: all var(--transition-speed);
-      color: var(--text-main);
-    }
-
-    .search-input:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 1.15rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-      pointer-events: none;
-    }
-
-    .categories-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .cat-btn {
-      padding: 0.6rem 1.25rem;
-      border-radius: 100px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      background: var(--primary-light);
-      color: var(--primary-color);
-      border: none;
-      cursor: pointer;
-      transition: all var(--transition-speed);
-    }
-
-    .cat-btn.active, .cat-btn:hover {
-      background: var(--primary-color);
-      color: #ffffff;
-    }
-
-    /* ════════════════════════════════ BLOG GRID ════════════════════════════════ */
-    .blog-section {
-      max-width: 1200px;
-      margin: 0 auto 4rem auto;
-      padding: 0 1.5rem;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.25rem;
-    }
-
-    .blog-card {
-      background: var(--bg-secondary);
-      border-radius: var(--border-radius-lg);
-      border: 1px solid rgba(14, 165, 233, 0.05);
-      box-shadow: var(--card-shadow);
-      padding: 2.25rem 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      transition: all var(--transition-speed) var(--transition-bounce);
-    }
-
-    .blog-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--card-shadow-hover);
-    }
-
-    .blog-cat-badge {
-      display: inline-block;
-      align-self: flex-start;
-      padding: 0.35rem 0.8rem;
-      font-size: 0.75rem;
-      font-weight: 700;
-      border-radius: 100px;
-      margin-bottom: 1.25rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .cat-badge-ai { background: #e0f2fe; color: #0369a1; }
-    .cat-badge-payroll { background: #fef3c7; color: #b45309; }
-    .cat-badge-tvc { background: #ecfdf5; color: #047857; }
-    .cat-badge-strategy { background: #f3e8ff; color: #6b21a8; }
-    .cat-badge-tech { background: #e0f8ff; color: #0d9488; }
-
-    .blog-card-title {
-      font-size: 1.35rem;
-      color: var(--text-main);
-      margin-bottom: 1rem;
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      transition: color var(--transition-speed);
-    }
-
-    .blog-card:hover .blog-card-title {
-      color: var(--primary-color);
-    }
-
-    .blog-card-teaser {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      margin-bottom: 1.75rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .blog-card-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      border-top: 1.5px solid var(--border-color);
-      padding-top: 1.25rem;
-    }
-
-    .blog-avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .blog-meta-details {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-author-name {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .blog-meta-sub {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-
-    /* ════════════════════════════════ PAGINATION ════════════════════════════════ */
-    .pagination-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 4rem;
-    }
-
-    .page-btn {
-      padding: 0.7rem 1.25rem;
-      border: 1.5px solid var(--border-color);
-      background: #ffffff;
-      border-radius: var(--border-radius-sm);
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text-main);
-      cursor: pointer;
-      transition: all var(--transition-speed);
-    }
-
-    .page-btn:hover:not(:disabled) {
-      border-color: var(--primary-color);
-      color: var(--primary-color);
-    }
-
-    .page-btn.active {
-      background: var(--primary-color);
-      border-color: var(--primary-color);
-      color: #ffffff;
-    }
-
-    .page-btn:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
-
-    .no-results {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 4rem 2rem;
-      background: #ffffff;
-      border-radius: var(--border-radius-lg);
-      border: 1.5px dashed var(--border-color);
-    }
-
-    .no-results svg {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-    }
-
-    /* ════════════════════════════════ ARTICLE MODAL ════════════════════════════════ */
-    .modal-backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.4);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity var(--transition-speed);
-      padding: 2rem;
-    }
-
-    .modal-backdrop.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .modal-card {
-      background: #ffffff;
-      width: 100%;
-      max-width: 800px;
-      max-height: 85vh;
-      border-radius: var(--border-radius-lg);
-      box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
-      display: flex;
-      flex-direction: column;
-      transform: translateY(30px);
-      transition: transform var(--transition-speed) var(--transition-bounce);
-      overflow: hidden;
-      border: 1px solid rgba(226, 232, 240, 0.8);
-    }
-
-    .modal-backdrop.active .modal-card {
-      transform: translateY(0);
-    }
-
-    .modal-header {
-      padding: 2rem 2.5rem 1.5rem 2.5rem;
-      border-bottom: 1px solid var(--border-color);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1.5rem;
-    }
-
-    .modal-title-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .modal-title {
-      font-size: 1.75rem;
-      line-height: 1.3;
-      color: var(--text-main);
-    }
-
-    .modal-close-btn {
-      background: var(--primary-light);
-      border: none;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: var(--primary-color);
-      transition: all var(--transition-speed);
-      flex-shrink: 0;
-    }
-
-    .modal-close-btn:hover {
-      background: var(--primary-color);
-      color: #ffffff;
-      transform: rotate(90deg);
-    }
-
-    .modal-scroll-body {
-      padding: 2.5rem;
-      overflow-y: auto;
-      flex-grow: 1;
-    }
-
-    .modal-meta-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1.5px solid var(--border-color);
-    }
-
-    .modal-body-content p {
-      font-size: 1.05rem;
-      color: #334155;
-      margin-bottom: 1.5rem;
-      line-height: 1.7;
-    }
-
-    .modal-body-content h4 {
-      font-size: 1.25rem;
-      color: var(--text-main);
-      margin: 2rem 0 1rem 0;
-    }
-
-    .modal-body-content ul {
-      margin-bottom: 1.5rem;
-      padding-left: 1.5rem;
-    }
-
-    .modal-body-content li {
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
-      color: #334155;
-    }
-
-    /* ════════════════════════════════ FOOTER ════════════════════════════════ */
-    footer {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 5rem 8% 2rem 8%;
-      margin-top: 6rem;
-    }
-
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 4rem;
-    }
-
-    .footer-brand {
-      max-width: 400px;
-    }
-
-    .footer-logo {
-      height: 40px;
-      border-radius: var(--border-radius-sm);
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-desc {
-      color: #94a3b8;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #334155;
-      padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    /* ════════════════════════════════ RESPONSIVE ════════════════════════════════ */
-    @media (max-width: 1024px) {
-      .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding-top: 70px;
-      }
-      .navbar {
-        height: 70px;
-        padding: 0 5%;
-      }
-      .nav-links {
-        display: none;
-      }
-      .hero-title {
-        font-size: 2.25rem;
-      }
-      .blog-grid {
-        grid-template-columns: 1fr;
-      }
-      .controls-container {
-        padding: 1.25rem;
-      }
-      .modal-card {
-        max-height: 95vh;
-      }
-      .modal-scroll-body {
-        padding: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Read articles and compliance guides on AI HRMS portals, automated payroll, multi-state tax, and strategic workforce management on the Kylrx AI Blog.">
+    <title>Blog & Insights | Kylrx AI</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- ════════════════════════════════ NAVBAR ════════════════════════════════ -->
-  <nav class="navbar">
-    <a href="index.html" class="nav-brand">
-      <img src="assets/logo.jpg" alt="Kylrx AI Logo" class="nav-logo" />
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html#why">Features</a></li>
-      <li><a href="index.html#pricing">Pricing</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="index.html#footer">Contact</a></li>
-    </ul>
-    <a href="index.html#pricing" class="nav-cta-btn">Get Started</a>
-  </nav>
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo" id="header-logo">
+                <img src="assets/logo.png" alt="Kylrx AI" class="header-logo-img" />
+            </a>
 
-  <!-- ════════════════════════════════ HERO ════════════════════════════════ -->
-  <section class="hero">
-    <div class="hero-glow"></div>
-    <div class="hero-content">
-      <h1 class="hero-title">Kylrx AI <span>Insights &amp; Resource Hub</span></h1>
-      <p class="hero-subtitle">Master automated HR operations, enterprise tax calculations, labor law compliance, and biometric timekeeping with our comprehensive library of articles.</p>
-    </div>
-  </section>
+            <nav class="desktop-nav" aria-label="Main Navigation">
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#modules" class="nav-link">Modules</a>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="index.html#testimonials" class="nav-link">Testimonials</a>
+                <a href="index.html#faqs" class="nav-link">FAQs</a>
+                <a href="blog.html" class="nav-link active">Blog</a>
+            </nav>
 
-  <!-- ════════════════════════════════ CONTROLS SECTION ════════════════════════════════ -->
-  <section class="controls-container">
-    <div class="search-box">
-      <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="11" cy="11" r="8"></circle>
-        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-      </svg>
-      <input type="text" id="searchInput" class="search-input" placeholder="Search across 100+ resource articles, topics, compliance policies...">
-    </div>
-    <div class="categories-row" id="categoriesRow">
-      <button class="cat-btn active" data-category="All">All Topics</button>
-      <button class="cat-btn" data-category="AI & Automation">AI &amp; Automation</button>
-      <button class="cat-btn" data-category="Payroll & Tax">Payroll &amp; Tax</button>
-      <button class="cat-btn" data-category="Compliance & TVC">Compliance &amp; TVC</button>
-      <button class="cat-btn" data-category="HR Strategy">HR Strategy</button>
-      <button class="cat-btn" data-category="Workforce Tech">Workforce Tech</button>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════ BLOG GRID ════════════════════════════════ -->
-  <main class="blog-section">
-    <div class="blog-grid" id="blogGrid">
-      <!-- Generated blog cards will be dynamically rendered here -->
-    </div>
-
-    <!-- Pagination Controller -->
-    <div class="pagination-container" id="pagination">
-      <!-- Pagination buttons rendered here -->
-    </div>
-  </main>
-
-  <!-- ════════════════════════════════ ARTICLE DETAIL MODAL ════════════════════════════════ -->
-  <div class="modal-backdrop" id="articleModal">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div class="modal-title-wrap">
-          <span class="blog-cat-badge cat-badge-ai" id="modalBadge">AI &amp; Automation</span>
-          <h2 class="modal-title" id="modalTitle">Article Title</h2>
-        </div>
-        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close article">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
-      </div>
-      <div class="modal-scroll-body">
-        <div class="modal-meta-row">
-          <div class="blog-avatar" id="modalAvatar">P</div>
-          <div class="blog-meta-details">
-            <span class="blog-author-name" id="modalAuthor">Priya Sharma</span>
-            <span class="blog-meta-sub" id="modalDate">May 24, 2026 • 5 min read</span>
-          </div>
-        </div>
-        <div class="modal-body-content" id="modalBody">
-          <!-- Article HTML content -->
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ════════════════════════════════ FOOTER ════════════════════════════════ -->
-  <footer>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="assets/logo.jpg" alt="Kylrx AI" class="footer-logo" />
-        <p class="footer-desc">AI-powered HRMS platform built for modern enterprises. Automate HR, boost productivity, and stay compliant — effortlessly.</p>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 Kylrx AI. All rights reserved. Built with ❤️ for modern HR teams.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ════════════════════════════════ BLOG GENERATOR & RENDERER JAVASCRIPT ════════════════════════════════ -->
-  <script>
-    // 100 Blogs dynamic dataset generator
-    const prefixes = [
-      "How to Optimize", "The Future of", "A Complete Guide to", "Next-Gen", "Understanding",
-      "Leveraging AI for", "Mastering", "Why Modern Teams Love", "Scaling", "The ROI of"
-    ];
-
-    const topics = [
-      "Automated Payroll Systems", "Real-Time Compliance Auditing", "Workforce Scheduling & Rostering",
-      "Trust & Verification Centers (TVC)", "Biometric Attendance Systems", "AI-Powered Leave Management",
-      "Custom Roster Allocations", "AES-256 Data Protection", "Single Sign-On (SSO) Protocols",
-      "Tax & Provident Fund Computations", "Remote Workforce Productivity", "Labor Law Compliance",
-      "Dynamic Shift Operations", "Anomaly and Mismatch Tracking", "Employee Self-Service Portals"
-    ];
-
-    const endings = [
-      "in 2026", "for Scaling Startups", "for Enterprise Organizations", "with Zero Manual Effort",
-      "to Double Operational Efficiency", "for Hybrid Workforces", "to Mitigate Audit Risks",
-      "with Bank-Grade Security", "to Drive Employee Retention", "for Modern HR Teams"
-    ];
-
-    const categories = ['AI & Automation', 'Payroll & Tax', 'Compliance & TVC', 'HR Strategy', 'Workforce Tech'];
-    const authors = ['Priya Sharma', 'Vikram Malhotra', 'Rahul Mehta', 'Ananya Iyer', 'Meera Nair', 'Arjun Sen', 'Sneha Reddy', 'Kabir Das'];
-
-    // Generate exactly 100 professional blogs
-    const generateBlogs = () => {
-      const list = [];
-      let pIdx = 0, tIdx = 0, eIdx = 0;
-      
-      while (list.length < 100) {
-        const prefix = prefixes[pIdx];
-        const topic = topics[tIdx];
-        const ending = endings[eIdx];
-        
-        const title = `${prefix} ${topic} ${ending}`;
-        const category = categories[tIdx % categories.length];
-        const author = authors[(pIdx + tIdx + eIdx) % authors.length];
-        
-        // Date offset back in time
-        const dateObj = new Date();
-        dateObj.setDate(dateObj.getDate() - (list.length * 2));
-        const dateString = dateObj.toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        });
-        
-        const readTime = `${3 + ((pIdx + tIdx) % 6)} min read`;
-        const summary = `Learn how implementing smart, secure methods for ${topic.toLowerCase()} can drastically lower your operating overhead, eliminate statutory penalties, and enhance trust across hybrid corporate teams.`;
-        
-        const content = `
-          <p>Managing modern workforce operations requires balancing scale, security, and administrative efficiency. When handling <strong>${topic}</strong>, traditional manual spreadsheets quickly fail due to human errors, tax mismatches, and compliance oversights.</p>
-          
-          <p>By implementing a unified cloud HRMS platform like Kylrx AI, HR teams can completely automate these processes. Using state-of-the-art anomaly checks and high-fidelity cloud sync, administrative friction is minimized by up to 85%.</p>
-          
-          <h4>Key Best Practices:</h4>
-          <ul>
-            <li><strong>Automated Validation:</strong> Validate biometric and clock-in rosters against central compliance profiles.</li>
-            <li><strong>Proactive Mismatch Alerts:</strong> Detect shift overlaps or payroll variations instantly before ledger finalization.</li>
-            <li><strong>Self-Service Access:</strong> Empower employees to download their statutory records and manage roster leaves autonomously.</li>
-          </ul>
-          
-          <p>Embracing these technologies is no longer optional for scaling enterprises. By automating ${topic.toLowerCase()} ${ending}, you completely safeguard your corporate records, optimize organizational productivity, and provide your team with a premium, friction-free employee experience.</p>
-        `;
-
-        list.push({
-          id: list.length + 1,
-          title,
-          category,
-          author,
-          date: dateString,
-          readTime,
-          summary,
-          content
-        });
-
-        // Advance indices
-        eIdx = (eIdx + 1) % endings.length;
-        if (eIdx === 0) {
-          tIdx = (tIdx + 1) % topics.length;
-          if (tIdx === 0) {
-            pIdx = (pIdx + 1) % prefixes.length;
-          }
-        }
-      }
-      return list;
-    };
-
-    const allBlogs = generateBlogs();
-    let filteredBlogs = [...allBlogs];
-    
-    // Pagination state
-    const itemsPerPage = 9;
-    let currentPage = 1;
-
-    // Elements
-    const blogGrid = document.getElementById('blogGrid');
-    const pagination = document.getElementById('pagination');
-    const searchInput = document.getElementById('searchInput');
-    const categoriesRow = document.getElementById('categoriesRow');
-    
-    // Modal Elements
-    const articleModal = document.getElementById('articleModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalBadge = document.getElementById('modalBadge');
-    const modalAvatar = document.getElementById('modalAvatar');
-    const modalAuthor = document.getElementById('modalAuthor');
-    const modalDate = document.getElementById('modalDate');
-    const modalBody = document.getElementById('modalBody');
-    const modalCloseBtn = document.getElementById('modalCloseBtn');
-
-    // Get badge CSS class by category
-    const getBadgeClass = (cat) => {
-      switch (cat) {
-        case 'AI & Automation': return 'cat-badge-ai';
-        case 'Payroll & Tax': return 'cat-badge-payroll';
-        case 'Compliance & TVC': return 'cat-badge-tvc';
-        case 'HR Strategy': return 'cat-badge-strategy';
-        case 'Workforce Tech': return 'cat-badge-tech';
-        default: return 'cat-badge-ai';
-      }
-    };
-
-    // Render a single page of blogs
-    const renderBlogs = () => {
-      blogGrid.innerHTML = '';
-      
-      if (filteredBlogs.length === 0) {
-        blogGrid.innerHTML = `
-          <div class="no-results">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <h3>No Articles Found</h3>
-            <p style="color:var(--text-muted);margin-top:0.5rem;">Try adjusting your keywords or selecting a different category.</p>
-          </div>
-        `;
-        pagination.innerHTML = '';
-        return;
-      }
-
-      const startIndex = (currentPage - 1) * itemsPerPage;
-      const endIndex = Math.min(startIndex + itemsPerPage, filteredBlogs.length);
-      const pageItems = filteredBlogs.slice(startIndex, endIndex);
-
-      pageItems.forEach(blog => {
-        const badgeClass = getBadgeClass(blog.category);
-        
-        const card = document.createElement('div');
-        card.className = 'blog-card';
-        card.innerHTML = `
-          <div>
-            <span class="blog-cat-badge ${badgeClass}">${blog.category}</span>
-            <h3 class="blog-card-title">${blog.title}</h3>
-            <p class="blog-card-teaser">${blog.summary}</p>
-          </div>
-          <div class="blog-card-meta">
-            <div class="blog-avatar">${blog.author.charAt(0)}</div>
-            <div class="blog-meta-details">
-              <span class="blog-author-name">${blog.author}</span>
-              <span class="blog-meta-sub">${blog.date} • ${blog.readTime}</span>
+            <div class="header-ctas">
+                <button class="btn btn-outline btn-contact-trigger">Contact Sales</button>
+                <a href="demo.html" class="btn btn-primary">Book Demo</a>
             </div>
-          </div>
-        `;
 
-        card.addEventListener('click', () => openArticle(blog.id));
-        blogGrid.appendChild(card);
-      });
+            <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
 
-      renderPagination();
-    };
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <div class="drawer-overlay" id="drawer-overlay"></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" alt="Kylrx AI" class="header-logo-img" />
+                </a>
+                <button class="drawer-close" id="drawer-close" aria-label="Close Menu">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <nav class="drawer-nav">
+                <a href="index.html#features" class="drawer-link">Features</a>
+                <a href="index.html#modules" class="drawer-link">Modules</a>
+                <a href="index.html#pricing" class="drawer-link">Pricing</a>
+                <a href="index.html#testimonials" class="drawer-link">Testimonials</a>
+                <a href="index.html#faqs" class="drawer-link">FAQs</a>
+                <a href="blog.html" class="drawer-link active">Blog</a>
+            </nav>
+            <div class="drawer-ctas">
+                <button class="btn btn-outline btn-contact-trigger w-100">Contact Sales</button>
+                <a href="demo.html" class="btn btn-primary w-100">Book Demo</a>
+            </div>
+        </div>
+    </div>
 
-    // Render Pagination Controls
-    const renderPagination = () => {
-      pagination.innerHTML = '';
-      const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
-      if (totalPages <= 1) return;
+    <!-- Hero Search Section -->
+    <section class="blog-search-section">
+        <div class="container">
+            <div class="badge">
+                <span class="pulse"></span> Resource Library
+            </div>
+            <h1 class="section-title" style="margin-top: 1rem; font-size: 2.75rem;">Kylrx AI Insights</h1>
+            <p class="section-subtitle" style="margin-right: auto; margin-left: auto; max-width: 600px;">
+                Guides, legal updates, and research frameworks on serverless payroll processing, statutory labor laws, and conversational workplace automation.
+            </p>
 
-      // Prev Button
-      const prevBtn = document.createElement('button');
-      prevBtn.className = 'page-btn';
-      prevBtn.textContent = 'Prev';
-      prevBtn.disabled = currentPage === 1;
-      prevBtn.addEventListener('click', () => {
-        if (currentPage > 1) {
-          currentPage--;
-          renderBlogs();
-          window.scrollTo({ top: 400, behavior: 'smooth' });
-        }
-      });
-      pagination.appendChild(prevBtn);
+            <div class="blog-search-container">
+                <div class="blog-search-box">
+                    <svg class="blog-search-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="blog-search-input" class="blog-search-input" placeholder="Search across 100+ resource articles, topics, compliance policies...">
+                </div>
 
-      // Page numbers (max 5 displayed, standard sliding pagination)
-      let startPage = Math.max(1, currentPage - 2);
-      let endPage = Math.min(totalPages, startPage + 4);
-      
-      if (endPage - startPage < 4) {
-        startPage = Math.max(1, endPage - 4);
-      }
+                <ul class="blog-filter-pills" id="category-filter-pills">
+                    <li><button class="filter-pill active" data-category="all">All Topics</button></li>
+                    <li><button class="filter-pill" data-category="AI & Automation">AI & Automation</button></li>
+                    <li><button class="filter-pill" data-category="Payroll & Tax">Payroll & Tax</button></li>
+                    <li><button class="filter-pill" data-category="Compliance & TVC">Compliance & TVC</button></li>
+                    <li><button class="filter-pill" data-category="HR Strategy">HR Strategy</button></li>
+                    <li><button class="filter-pill" data-category="Workforce Tech">Workforce Tech</button></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-      for (let i = startPage; i <= endPage; i++) {
-        const numBtn = document.createElement('button');
-        numBtn.className = `page-btn ${i === currentPage ? 'active' : ''}`;
-        numBtn.textContent = i;
-        numBtn.addEventListener('click', () => {
-          currentPage = i;
-          renderBlogs();
-          window.scrollTo({ top: 400, behavior: 'smooth' });
+    <!-- Main Content Section -->
+    <main class="blog-content-section" id="main-content">
+        <div class="container">
+            <!-- Grid of Cards -->
+            <div class="blog-grid" id="blog-cards-grid">
+                <!-- Dynamically populated via JavaScript -->
+            </div>
+
+            <!-- Pagination Wrapper -->
+            <div class="blog-pagination-wrapper" id="blog-pagination">
+                <button class="pagination-btn" id="pagination-prev-btn" disabled>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                    Previous
+                </button>
+                <span class="page-numbers-info" id="pagination-pages-label">Page 1 of 12</span>
+                <button class="pagination-btn" id="pagination-next-btn">
+                    Next
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Interactive Reading Modal -->
+    <div class="blog-reader-modal" id="blogReaderModal">
+        <div class="blog-reader-overlay" id="blogReaderOverlay"></div>
+        <div class="blog-reader-container">
+            <button class="blog-reader-close" id="blogReaderClose" aria-label="Close article">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="blog-reader-header">
+                <span class="badge" id="modal-category-badge" style="margin-bottom: 0.75rem;">AI & Automation</span>
+                <h2 id="modal-article-title" style="font-size: 1.8rem; font-weight: 800; line-height: 1.3;">Article Title</h2>
+                <div class="blog-author-block" style="border: none; padding: 0; margin-top: 1.25rem;">
+                    <div class="author-avatar" id="modal-author-avatar">P</div>
+                    <div class="author-details">
+                        <div class="author-name" id="modal-author-name">Priya Sharma</div>
+                        <div class="blog-meta-info" id="modal-meta-info">June 23, 2026 • 3 min read</div>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-reader-content" id="modal-article-body">
+                <!-- Populated Dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Global CTA Forms Modals Section -->
+    <!-- Contact/Demo Request Modal -->
+    <div class="modal" id="demo-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-wrapper glass-card">
+            <button class="modal-close" aria-label="Close modal">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-header">
+                <h3>Contact Sales & Request Demo</h3>
+                <p>See Kylrx AI live or talk to our sales team about pricing. Fill details, and our HR experts will contact you within 2 hours.</p>
+            </div>
+            <form class="modal-form" id="demo-form">
+                <div class="form-group">
+                    <label for="demo-name">Full Name</label>
+                    <input type="text" id="demo-name" required placeholder="Megan Snyder">
+                </div>
+                <div class="form-group">
+                    <label for="demo-email">Business Email</label>
+                    <input type="email" id="demo-email" required placeholder="megan@healthtech.com">
+                </div>
+                <div class="form-group">
+                    <label for="demo-company">Company Name</label>
+                    <input type="text" id="demo-company" required placeholder="HealthTech Inc">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="demo-employees">Workforce Size</label>
+                        <select id="demo-employees" required>
+                            <option value="" disabled selected>Select size...</option>
+                            <option value="0-50">0–50 Employees</option>
+                            <option value="51-150">51–150 Employees</option>
+                            <option value="151-250">151–250 Employees</option>
+                            <option value="251-500">251–500 Employees</option>
+                            <option value="501-1000">501–1000 Employees</option>
+                            <option value="1000+">Above 1000 Employees</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-date">Desired Date</label>
+                        <input type="date" id="demo-date" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Confirm Demo Request</button>
+            </form>
+            <div class="form-success-state" id="demo-success">
+                <div class="success-icon">
+                    <svg width="48" height="48" fill="none" stroke="#4DA6FF" stroke-width="2">
+                        <circle cx="24" cy="24" r="22"></circle>
+                        <polyline points="16 24 22 30 32 18"></polyline>
+                    </svg>
+                </div>
+                <h4>Demo Successfully Scheduled!</h4>
+                <p>An expert scheduler has sent a confirmation calendar invite to your inbox.</p>
+                <button class="btn btn-outline close-success-btn">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DYNAMIC DOCUMENT MODAL -->
+    <div class="doc-modal" id="docModal" aria-hidden="true">
+        <div class="doc-modal-overlay" id="docModalOverlay"></div>
+        <div class="doc-modal-container">
+            <button class="doc-modal-close" id="docModalClose" aria-label="Close modal">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="doc-modal-header">
+                <h3 id="docModalTitle">Document Title</h3>
+            </div>
+            <div class="doc-modal-content" id="docModalContent">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="assets/logo.png" alt="Kylrx AI" class="footer-logo" />
+                    </div>
+                    <p class="footer-desc">AI-powered HRMS platform built for modern enterprises. Automate HR, boost
+                        productivity, and stay compliant — effortlessly.</p>
+                    <a href="mailto:info.kylrxai@gmail.com" class="footer-email-link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        info.kylrxai@gmail.com
+                    </a>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/kylrx-ai/" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" title="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/kylrxai" target="_blank" rel="noopener noreferrer" class="social-icon"
+                            title="Twitter / X">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/kylrx.ai/" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" title="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@KylrxAI" target="_blank" rel="noopener noreferrer"
+                            class="social-icon" title="YouTube">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="demo.html">Demo</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#" data-doc="about">About Us</a></li>
+                        <li><a href="#" data-doc="careers">Careers</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#" data-doc="privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-doc="terms">Terms of Service</a></li>
+                        <li><a href="#" data-doc="cookies">Cookie Policy</a></li>
+                        <li><a href="#" data-doc="security">Security</a></li>
+                        <li><a href="#" data-doc="compliance">Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Kylrx AI. All rights reserved. Built with ❤️ for modern HR teams.</p>
+                <div class="footer-bottom-links">
+                    <a href="#" data-doc="privacy">Privacy</a>
+                    <a href="#" data-doc="terms">Terms</a>
+                    <a href="#" data-doc="sitemap">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="script.js"></script>
+
+    <!-- Custom Blog Controller & Database Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Raw list of 105 distinct hand-crafted titles
+            const rawTitles = [
+                // AI & Automation (21)
+                { c: "AI & Automation", t: "How Generative AI is Eliminating the Traditional HR Helpdesk" },
+                { c: "AI & Automation", t: "Implementing Secure LLM Sandboxes for Employee Policy Queries" },
+                { c: "AI & Automation", t: "Algorithmic Workforce Planning: Predictive Staffing for Enterprise" },
+                { c: "AI & Automation", t: "How Anomaly Detection Prevents Time-Clock and Payroll Discrepancies" },
+                { c: "AI & Automation", t: "Reducing HR Operations Costs by 40% with Intelligent Agents" },
+                { c: "AI & Automation", t: "Machine Learning Models for Talent Retention & Flight Risk Analytics" },
+                { c: "AI & Automation", t: "AI-Driven Onboarding: Automating Credentialing and Document Checks" },
+                { c: "AI & Automation", t: "Integrating LLM Summarizers in Employee Performance Feedbacks" },
+                { c: "AI & Automation", t: "How Predictive Scheduling Balances Employee Shifts and Demand Peaks" },
+                { c: "AI & Automation", t: "The Ethics of Automated Decision-Making in Candidate Screening" },
+                { c: "AI & Automation", t: "Accelerating Resource Mapping with Intelligent Skill-Tagging Models" },
+                { c: "AI & Automation", t: "Smart Attendance Analytics: Spotting Mismatches with Neural Nets" },
+                { c: "AI & Automation", t: "Conversational UI: How Voice Agents are Reimagining Employee HR Requests" },
+                { c: "AI & Automation", t: "The Role of Self-Improving Algorithmic Engines in Global Payroll Hubs" },
+                { c: "AI & Automation", t: "Machine Learning in Statutory Compliance: Automating Regulatory Scans" },
+                { c: "AI & Automation", t: "AI Anomaly Spotting: Identifying Time-Clock Leakage in Real Time" },
+                { c: "AI & Automation", t: "Automating Complex Shift Approvals with Logic-Gated AI Workflows" },
+                { c: "AI & Automation", t: "Smart Contract Extraction: Parsing Employment Agreement Terms Automatically" },
+                { c: "AI & Automation", t: "Building Autonomous HR Workspaces: A SaaS Blueprint for 2026" },
+                { c: "AI & Automation", t: "The Future of Conversational Workspaces: AI Partners for Team Leads" },
+                { c: "AI & Automation", t: "Cognitive Automation: Streamlining Legacy Database Entries in Days" },
+
+                // Payroll & Tax (20)
+                { c: "Payroll & Tax", t: "Optimizing Automated Payroll Systems at Scale: Key Strategies" },
+                { c: "Payroll & Tax", t: "Multi-State Remote Worker Taxation: Compliance & Auditing Manuals" },
+                { c: "Payroll & Tax", t: "Automating Local Tax Deductions: PF, PT, and Health Allocations" },
+                { c: "Payroll & Tax", t: "Preventing Billing Leakage with Algorithmic Clock-to-Payroll Syncs" },
+                { c: "Payroll & Tax", t: "Multi-Currency Direct Deposit Protocols: Speed and Security SLA" },
+                { c: "Payroll & Tax", t: "Structuring Competitive Compensation Packages for Remote Startups" },
+                { c: "Payroll & Tax", t: "The Hidden Cost of Manual Payroll Entry: Audit Discrepancies" },
+                { c: "Payroll & Tax", t: "Integrating Enterprise Payroll Dashboards with Accounting Portals" },
+                { c: "Payroll & Tax", t: "Global Contractor Management: Tax Allocations and Compliance" },
+                { c: "Payroll & Tax", t: "The Shift to Real-Time Payroll Calculations in Modern SaaS" },
+                { c: "Payroll & Tax", t: "Payroll Accuracy Benchmarks: Preventing Wage-and-Hour Class Actions" },
+                { c: "Payroll & Tax", t: "Automating Year-End Tax Adjustments and Corporate Returns" },
+                { c: "Payroll & Tax", t: "The Role of Smart Ledgers in Preventing Payroll Accounting Errors" },
+                { c: "Payroll & Tax", t: "Digital Payslip Delivery: Security, Compliance, and Encryption Standards" },
+                { c: "Payroll & Tax", t: "Compensation Optimization: Balancing Equity, Salary, and Benefits" },
+                { c: "Payroll & Tax", t: "Overtime Wage Compliance: Algorithmic Verification for Shift Rosters" },
+                { c: "Payroll & Tax", t: "Automating Localized Benefits Administration in Tiered Enterprise Plans" },
+                { c: "Payroll & Tax", t: "Expense Reimbursement Automation: Machine Learning Receipt Audits" },
+                { c: "Payroll & Tax", t: "Cloud Payroll Audits: Proactive Mismatch Spotting in Statutory Logs" },
+                { c: "Payroll & Tax", t: "Managing Global Bonuses: Compliance with Regional Tax Codes" },
+
+                // Compliance & TVC (21)
+                { c: "Compliance & TVC", t: "Labor Law Audits 2026: Preparing Your Enterprise Directory" },
+                { c: "Compliance & TVC", t: "SSO IAM Controls: Implementing SAML 2.0 and OIDC in HRMS" },
+                { c: "Compliance & TVC", t: "Proactive System Alerts: Mitigating Wage-and-Hour Audit Violations" },
+                { c: "Compliance & TVC", t: "SOC 2 Type II Compliance Standards for Employee Database Hosting" },
+                { c: "Compliance & TVC", t: "Employee Biometric Logs: Navigating Privacy Standards and Regulations" },
+                { c: "Compliance & TVC", t: "Statutory Disclosure Reporting: Automating Compliance Submissions" },
+                { c: "Compliance & TVC", t: "Mitigating Employee Classification Risks under Federal Labor Standards" },
+                { c: "Compliance & TVC", t: "Setting Up Secure Sandboxes for Internal HR Compliance Testing" },
+                { c: "Compliance & TVC", t: "AES-256 Encryption Standards: Securing Employee Records at Rest" },
+                { c: "Compliance & TVC", t: "Data Sovereignty Laws: Managing Multi-Region Employee Records" },
+                { c: "Compliance & TVC", t: "GDPR Compliance for HRMS SaaS: Employee Right-to-Erasure Protocols" },
+                { c: "Compliance & TVC", t: "Incident Response Guidelines: Securing HR Data Leaks Instantly" },
+                { c: "Compliance & TVC", t: "Maintaining Uptime SLAs: Serverless Failover Architectures for HRMS" },
+                { c: "Compliance & TVC", t: "Audit Trails: Tracking Permission Changes in Enterprise Admin Portals" },
+                { c: "Compliance & TVC", t: "Document Retention Guidelines: Compliant Storage Policies for SaaS" },
+                { c: "Compliance & TVC", t: "Health and Safety Compliance logs: Digitizing Onsite Incident Reporting" },
+                { c: "Compliance & TVC", t: "Whistleblower Protection: Structuring Anonymous Communication Channels" },
+                { c: "Compliance & TVC", t: "Compliance Monitoring: Automated Daily Checks Against Labor Codes" },
+                { c: "Compliance & TVC", t: "Secure Biometric Attendance Terminals: Regulatory Best Practices" },
+                { c: "Compliance & TVC", t: "Access Control Audits: Guaranteeing Departmental Partition Isolation" },
+                { c: "Compliance & TVC", t: "The Value of Compliance TVC: Communicating Corporate Rules Visually" },
+
+                // HR Strategy (21)
+                { c: "HR Strategy", t: "Executive Onboarding Journeys: Remote Integration Blueprints" },
+                { c: "HR Strategy", t: "Transparent Compensation Frameworks: Tiered Plans for Workforce Sizes" },
+                { c: "HR Strategy", t: "Scaling Alignment: Sustaining Trust in Globally Distributed Teams" },
+                { c: "HR Strategy", t: "Reimagining Performance Tracking: Dynamic Reviews vs Annual Ratings" },
+                { c: "HR Strategy", t: "Mitigating Executive Burnout: Sustainable Leadership Frameworks" },
+                { c: "HR Strategy", t: "Knowledge Architecture: Creating a Culture of Digital Documentation" },
+                { c: "HR Strategy", t: "Manager Empowerment: The Role of Granular Access Partitioning" },
+                { c: "HR Strategy", t: "Exit Interview Analytics: Uncovering Patterns of Employee Turnover" },
+                { c: "HR Strategy", t: "Internal Mobility: Career Growth Mapping and Role Rotations" },
+                { c: "HR Strategy", t: "Benefits Optimization: Health vs Wellness Allocations in SaaS" },
+                { c: "HR Strategy", t: "Diverse Hiring Strategies: Eliminating Bias in Candidate Sourcing" },
+                { c: "HR Strategy", t: "High-Growth Scaling: Structuring HR Teams for Hyper-Expansion" },
+                { c: "HR Strategy", t: "Employee Engagement Surveys: Moving from Feedback to Execution" },
+                { c: "HR Strategy", t: "Mentorship Frameworks: Structuring Career Development Programs" },
+                { c: "HR Strategy", t: "Designing Effective Remote-First Work Policies and Handbooks" },
+                { c: "HR Strategy", t: "Restructuring Workforce Teams: Management Protocols for Mergers" },
+                { c: "HR Strategy", t: "Succession Planning: Identifying and Training Next-Gen Leaders" },
+                { c: "HR Strategy", t: "Workplace Wellness Programs: Hard Data on ROI and Productivity" },
+                { c: "HR Strategy", t: "Psychological Safety: The Foundation of High-Performing Engineering Teams" },
+                { c: "HR Strategy", t: "Creative Collaboration: Restructuring Hybrid Team Touchpoints" },
+                { c: "HR Strategy", t: "Strategic Alignment: Mapping HR Metrics Directly to Boardroom KPIs" },
+
+                // Workforce Tech (22)
+                { c: "Workforce Tech", t: "Selecting an HRMS Tech Stack: Scalability, API Integrations, and Security" },
+                { c: "Workforce Tech", t: "Geo-Fenced Mobile Punch Terminals: Preventing Clock-in Spoofing" },
+                { c: "Workforce Tech", t: "Connecting Productivity Hubs: Integrating Slack with HRMS Pipelines" },
+                { c: "Workforce Tech", t: "Hardware Logistics Integration: API Frameworks for Device Provisioning" },
+                { c: "Workforce Tech", t: "Modernizing Legacy HR Systems: Migrating to Serverless SaaS" },
+                { c: "Workforce Tech", t: "Statutory Export Engines: PDF/CSV Generators for Corporate Audits" },
+                { c: "Workforce Tech", t: "SAML 2.0 Security Architecture: Single Sign-On for Enterprise Portals" },
+                { c: "Workforce Tech", t: "Serverless Scaling: Managing 10k+ Concurrent Dashboard Sessions" },
+                { c: "Workforce Tech", t: "API Custom Syncs: Integrating Workforce Directories with CRM/ERP Databases" },
+                { c: "Workforce Tech", t: "Dashboard Live News Tickers: Architecting Real-Time Feed Systems" },
+                { c: "Workforce Tech", t: "The Role of Database Indexing in Fast Payroll Ledger Queries" },
+                { c: "Workforce Tech", t: "Mobile App Push Notifications: Driving Real-Time Shift Trade Responses" },
+                { c: "Workforce Tech", t: "Biometric Attendance Terminals: Hardware API Integrations with Cloud" },
+                { c: "Workforce Tech", t: "Interactive Slider Components: Best Practices in UI/UX Layout Design" },
+                { c: "Workforce Tech", t: "Building Offline-First Attendance Trackers for Remote Operations" },
+                { c: "Workforce Tech", t: "Analytics Engines: Aggregating Department Logs in Real Time" },
+                { c: "Workforce Tech", t: "Secure Document Storage: Managing Versioning and Metadata in Cloud" },
+                { c: "Workforce Tech", t: "System Monitoring: Setting Up Prometheus Metrics for HRMS Services" },
+                { c: "Workforce Tech", t: "Single Page App Navigation: Managing History, State, and Routing" },
+                { c: "Workforce Tech", t: "Database Encryption Keys: Managing KMS Configurations for HR Data" },
+                { c: "Workforce Tech", t: "Zero Trust Architectures: Implementing Device Attestation for HR Access" },
+                { c: "Workforce Tech", t: "Automated Backup Schedules: Disaster Recovery Testing Protocols" }
+            ];
+
+            const authors = [
+                { name: "Priya Sharma", init: "P" },
+                { name: "Vikram Malhotra", init: "V" },
+                { name: "Rahul Mehta", init: "R" },
+                { name: "Sarah Jenkins", init: "S" },
+                { name: "David Chen", init: "D" }
+            ];
+
+            const months = ["January", "February", "March", "April", "May", "June"];
+
+            // Programmatically construct the complete 105 articles database
+            const articlesDatabase = rawTitles.map((item, index) => {
+                const author = authors[index % authors.length];
+                const dateMonth = months[index % months.length];
+                const dateDay = 1 + (index * 7) % 28;
+                const readTime = 3 + (index * 2) % 6; // 3 to 8 min read
+
+                return {
+                    id: index + 1,
+                    category: item.c,
+                    title: item.t,
+                    summary: `An in-depth evaluation on how to implement ${item.t.toLowerCase()} inside modern enterprise configurations. This guide details operational safeguards, system setups, and efficiency metrics.`,
+                    content: `
+                        <p>In today's fast-moving enterprise workspace, the implementation of <strong>${item.t}</strong> represents a key milestone in operational efficiency and technology-first human resources scaling.</p>
+                        
+                        <blockquote>
+                            "Automation and structural alignment are no longer optional. They are the defining parameters of high-growth modern business operations."
+                        </blockquote>
+
+                        <h3>1. The Operational Landscape</h3>
+                        <p>Developing robust frameworks to support ${item.t.toLowerCase()} requires a thorough audit of active databases, workforce habits, and security structures. Organizations that skip this preparatory review often face system integration friction, user pushback, and data formatting issues.</p>
+                        <p>With Kylrx AI, departments can partition their databases safely while running parallel compliance evaluations, guaranteeing that active shifts, salary payouts, and legal files stay perfectly aligned.</p>
+
+                        <h3>2. Core Strategic Implementations</h3>
+                        <p>To successfully integrate these practices, enterprise leaders should focus on three foundational columns:</p>
+                        <ul>
+                            <li><strong>API Interconnectivity:</strong> Ensure your directory structures sync seamlessly with local ERP and CRM ledgers.</li>
+                            <li><strong>Role-Based Access Control:</strong> Enforce strict Single Sign-On (SSO) protocols so only authorized managers can modify statutory payroll codes.</li>
+                            <li><strong>Continuous Audit Cycles:</strong> Perform automated anomaly checks and payroll discrepancy scans on a daily basis.</li>
+                        </ul>
+
+                        <h3>3. Measuring Key Outcomes</h3>
+                        <p>By establishing automated checks, HR teams see a measurable 35% decrease in operational friction and double the speed of onboarding configurations. Furthermore, utilizing sandboxed environments for statutory compliance updates isolates security scopes and protects employee record folders.</p>
+
+                        <h3>Conclusion</h3>
+                        <p>Ultimately, investing in modern frameworks for ${item.t.toLowerCase()} prepares companies for long-term growth and bulletproof audits. Contact our solutions desk today to see how Kylrx AI can integrate these features directly into your enterprise workspace portal.</p>
+                    `,
+                    author: author.name,
+                    authorInitials: author.init,
+                    date: `${dateMonth} ${dateDay}, 2026`,
+                    readTime: `${readTime} min read`
+                };
+            });
+
+            // State management
+            let currentFilter = 'all';
+            let searchQuery = '';
+            let currentPage = 1;
+            const itemsPerPage = 9;
+            let filteredArticles = [...articlesDatabase];
+
+            const gridContainer = document.getElementById('blog-cards-grid');
+            const searchInput = document.getElementById('blog-search-input');
+            const pillsContainer = document.getElementById('category-filter-pills');
+            const pagesLabel = document.getElementById('pagination-pages-label');
+            const prevBtn = document.getElementById('pagination-prev-btn');
+            const nextBtn = document.getElementById('pagination-next-btn');
+
+            // Reader Modal Elements
+            const readerModal = document.getElementById('blogReaderModal');
+            const readerClose = document.getElementById('blogReaderClose');
+            const readerOverlay = document.getElementById('blogReaderOverlay');
+            const modalBadge = document.getElementById('modal-category-badge');
+            const modalTitle = document.getElementById('modal-article-title');
+            const modalAvatar = document.getElementById('modal-author-avatar');
+            const modalName = document.getElementById('modal-author-name');
+            const modalMeta = document.getElementById('modal-meta-info');
+            const modalBody = document.getElementById('modal-article-body');
+
+            // Open Reader Modal
+            function openReader(article) {
+                modalBadge.textContent = article.category;
+                // Add specific styles depending on the category for badge styling
+                modalTitle.textContent = article.title;
+                modalAvatar.textContent = article.authorInitials;
+                modalName.textContent = article.author;
+                modalMeta.textContent = `${article.date} • ${article.readTime}`;
+                modalBody.innerHTML = article.content;
+
+                readerModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            // Close Reader Modal
+            function closeReader() {
+                readerModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            readerClose.addEventListener('click', closeReader);
+            readerOverlay.addEventListener('click', closeReader);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && readerModal.classList.contains('active')) {
+                    closeReader();
+                }
+            });
+
+            // Filter and Search Logic
+            function applyFilters() {
+                filteredArticles = articlesDatabase.filter(article => {
+                    const matchesCategory = currentFilter === 'all' || article.category === currentFilter;
+                    const matchesSearch = article.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                          article.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                          article.category.toLowerCase().includes(searchQuery.toLowerCase());
+                    return matchesCategory && matchesSearch;
+                });
+
+                currentPage = 1;
+                renderGrid();
+            }
+
+            // Render Blog Cards
+            function renderGrid() {
+                gridContainer.innerHTML = '';
+                
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const pageArticles = filteredArticles.slice(startIndex, endIndex);
+
+                if (pageArticles.length === 0) {
+                    gridContainer.innerHTML = `
+                        <div class="no-results-state">
+                            <h3 class="no-results-title">No Articles Found</h3>
+                            <p class="no-results-desc">We couldn't find any resources matching "${searchQuery}" in this category. Try adjusting your keyword search or checking another filter.</p>
+                        </div>
+                    `;
+                    pagesLabel.textContent = "Page 0 of 0";
+                    prevBtn.disabled = true;
+                    nextBtn.disabled = true;
+                    return;
+                }
+
+                pageArticles.forEach(article => {
+                    const card = document.createElement('article');
+                    card.className = 'blog-card';
+                    card.innerHTML = `
+                        <div class="blog-card-body">
+                            <span class="badge blog-card-badge">${article.category}</span>
+                            <h3 class="blog-card-title">${article.title}</h3>
+                            <p class="blog-card-summary">${article.summary}</p>
+                            <div class="blog-author-block">
+                                <div class="author-avatar">${article.authorInitials}</div>
+                                <div class="author-details">
+                                    <h4 class="author-name">${article.author}</h4>
+                                    <div class="blog-meta-info">${article.date} • ${article.readTime}</div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    card.addEventListener('click', () => openReader(article));
+                    gridContainer.appendChild(card);
+                });
+
+                // Update Pagination Controls
+                const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
+                pagesLabel.textContent = `Page ${currentPage} of ${totalPages}`;
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = currentPage === totalPages;
+            }
+
+            // Search Bar Input Event
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                applyFilters();
+            });
+
+            // Category Pill Clicks
+            pillsContainer.addEventListener('click', (e) => {
+                const btn = e.target.closest('.filter-pill');
+                if (!btn) return;
+
+                document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                currentFilter = btn.getAttribute('data-category');
+                applyFilters();
+            });
+
+            // Pagination Buttons
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderGrid();
+                    document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const totalPages = Math.ceil(filteredArticles.length / itemsPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderGrid();
+                    document.getElementById('main-content').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            // Initial Render
+            renderGrid();
         });
-        pagination.appendChild(numBtn);
-      }
-
-      // Next Button
-      const nextBtn = document.createElement('button');
-      nextBtn.className = 'page-btn';
-      nextBtn.textContent = 'Next';
-      nextBtn.disabled = currentPage === totalPages;
-      nextBtn.addEventListener('click', () => {
-        if (currentPage < totalPages) {
-          currentPage++;
-          renderBlogs();
-          window.scrollTo({ top: 400, behavior: 'smooth' });
-        }
-      });
-      pagination.appendChild(nextBtn);
-    };
-
-    // Open Dynamic Modal
-    const openArticle = (id) => {
-      const blog = allBlogs.find(b => b.id === id);
-      if (!blog) return;
-
-      // Reset badge classes and add current
-      modalBadge.className = `blog-cat-badge ${getBadgeClass(blog.category)}`;
-      modalBadge.textContent = blog.category;
-      
-      modalTitle.textContent = blog.title;
-      modalAvatar.textContent = blog.author.charAt(0);
-      modalAuthor.textContent = blog.author;
-      modalDate.textContent = `${blog.date} • ${blog.readTime}`;
-      modalBody.innerHTML = blog.content;
-
-      // Active modal classes
-      articleModal.classList.add('active');
-      articleModal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    };
-
-    // Close Modal
-    const closeArticle = () => {
-      articleModal.classList.remove('active');
-      articleModal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    };
-
-    modalCloseBtn.addEventListener('click', closeArticle);
-    articleModal.addEventListener('click', (e) => {
-      if (e.target === articleModal) closeArticle();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && articleModal.classList.contains('active')) {
-        closeArticle();
-      }
-    });
-
-    // Filtering & Searching Logic
-    let currentCategory = 'All';
-    let searchQuery = '';
-
-    const filterAndSearch = () => {
-      filteredBlogs = allBlogs.filter(blog => {
-        const matchesCategory = currentCategory === 'All' || blog.category === currentCategory;
-        const matchesSearch = blog.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                             blog.summary.toLowerCase().includes(searchQuery.toLowerCase());
-        return matchesCategory && matchesSearch;
-      });
-
-      currentPage = 1; // Reset to page 1 on filter
-      renderBlogs();
-    };
-
-    // Search input event
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      filterAndSearch();
-    });
-
-    // Category pill click event
-    categoriesRow.addEventListener('click', (e) => {
-      const clickedBtn = e.target.closest('.cat-btn');
-      if (!clickedBtn) return;
-
-      categoriesRow.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active'));
-      clickedBtn.classList.add('active');
-
-      currentCategory = clickedBtn.getAttribute('data-category');
-      filterAndSearch();
-    });
-
-    // Initial render
-    renderBlogs();
-  </script>
+    </script>
 </body>
+
 </html>
