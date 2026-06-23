@@ -458,6 +458,14 @@
         </div>
       </button>
 
+      <button class="role-tab" onclick="switchRole('tvc')">
+        <div class="tab-icon"><i data-lucide="shield-check"></i></div>
+        <div class="tab-info">
+          <span class="tab-name">Trust & Verification</span>
+          <span class="tab-desc">Biometrics & compliance</span>
+        </div>
+      </button>
+
       <button class="role-tab" onclick="switchRole('manager')">
         <div class="tab-icon"><i data-lucide="users"></i></div>
         <div class="tab-info">
@@ -491,12 +499,14 @@
           <span>Feature Walkthrough Video</span>
         </div>
         <div class="video-wrapper" id="videoWrapper">
-          <video src="admin(sign up and login).mp4" controls></video>
-          <video src="admin(employee,manger,hrms)adding.mp4" controls></video>
-          <video src="admin dashboard builder.mp4" controls></video>
-          <video src="admin-policy-cente.mp4" controls></video>
-          <video src="admin(Enterprise exit command).mp4" controls></video>
-          <video src="admin(Enterprise leave).mp4" controls></video>
+          <video src="videos/admin/admin(sign up and login).mp4" controls></video>
+          <video src="videos/admin/admin(employee,manger,hrms)adding.mp4" controls></video>
+          <video src="videos/admin/admin dashboard builder.mp4" controls></video>
+          <video src="videos/admin/admin-policy-cente.mp4" controls></video>
+          <video src="videos/admin/Policy Center.mp4" controls></video>
+          <video src="videos/admin/admin(Enterprise exit command).mp4" controls></video>
+          <video src="videos/admin/admin(Enterprise leave).mp4" controls></video>
+          <video src="videos/admin/Onboarding Flow Designer.mp4" controls></video>
         </div>
       </div>
     </div>
@@ -565,33 +575,54 @@
         title: "Super Admin Sandbox",
         desc: "Access the full executive command center. Oversee system settings, view analytics, manage departments, policy documents, global users, and full compliance settlements.",
         videos: [
-          "admin(sign up and login).mp4",
-          "admin(employee,manger,hrms)adding.mp4",
-          "admin dashboard builder.mp4",
-          "admin-policy-cente.mp4",
-          "admin(Enterprise exit command).mp4",
-          "admin(Enterprise leave).mp4"
+          "videos/admin/admin(sign up and login).mp4",
+          "videos/admin/admin(employee,manger,hrms)adding.mp4",
+          "videos/admin/admin dashboard builder.mp4",
+          "videos/admin/admin-policy-cente.mp4",
+          "videos/admin/Policy Center.mp4",
+          "videos/admin/admin(Enterprise exit command).mp4",
+          "videos/admin/admin(Enterprise leave).mp4",
+          "videos/admin/Onboarding Flow Designer.mp4"
         ]
       },
       hrms: {
         title: "HRMS Admin Sandbox",
         desc: "Coordinate core HR operations. Audit employee appraisals, configure shifts, manage leave approvals, run payslip generation, and manage active hiring pipelines.",
         videos: [
-          "admin(sign up and login).mp4",
-          "admin(Enterprise leave).mp4"
+          "videos/hrms/admin(sign up and login).mp4",
+          "videos/hrms/admin(Enterprise leave).mp4",
+          "videos/hrms/HRMS.mp4"
         ] // Shared admin walkthrough
+      },
+      tvc: {
+        title: "Trust & Verification Center (TVC)",
+        desc: "Maintain continuous, compliance-level oversight across your entire workforce. Monitor live biometric attendance, verify background checks, audit active sessions, and review security compliance reports.",
+        videos: [
+          "videos/tvc/tvc.mp4"
+        ]
       },
       manager: {
         title: "Department Manager Sandbox",
         desc: "Oversee your engineering and operational team. Audit EOD tasks, evaluate employee performances, approve leave requests, and track real-time analytics for your department.",
         videos: [
-          "manger portal.mp4"
+          "videos/manager/manger portal.mp4",
+          "videos/manager/Manger-Document.mp4",
+          "videos/manager/team mangement .mp4",
+          "videos/manager/DepartmentalAnalytics.mp4",
+          "videos/manager/Security.mp4"
         ]
       },
       employee: {
         title: "Standard Employee Sandbox",
         desc: "Experience the employee dashboard. Log daily EOD summaries, punch attendance, view personalized leave logs, check pay slips, and verify dynamic task checklists.",
-        videos: []
+        videos: [
+          "videos/employee/apps.mp4",
+          "videos/employee/Attendance Log.mp4",
+          "videos/employee/RulesEmployees.mp4",
+          "videos/employee/Leave and TimeOff.mp4",
+          "videos/employee/AttendanceLog.mp4",
+          "videos/employee/DocumentEmployees.mp4"
+        ]
       }
     };
 
@@ -602,11 +633,9 @@
       
       // Update tabs UI
       const tabs = document.querySelectorAll('.role-tab');
+      const roleKeys = ['admin', 'hrms', 'tvc', 'manager', 'employee'];
       tabs.forEach((tab, index) => {
-        const isMatch = (index === 0 && roleKey === 'admin') || 
-                        (index === 1 && roleKey === 'hrms') || 
-                        (index === 2 && roleKey === 'manager') || 
-                        (index === 3 && roleKey === 'employee');
+        const isMatch = roleKeys[index] === roleKey;
         tab.classList.toggle('active', isMatch);
       });
 
