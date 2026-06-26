@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Pricing Bands — exact tiers as specified
     const pricingPlans = [
-        { name: "0–100 Employees",      price: "1,000",  desc: "Perfect for startups and small scale teams." },
-        { name: "101–200 Employees",    price: "1,300",  desc: "Fully featured HRMS toolkit for scaling companies." },
-        { name: "201–500 Employees",    price: "2,200",  desc: "Comprehensive workflows for mid-sized companies." },
-        { name: "501–1000 Employees",   price: "3,500",  desc: "Engineered for high-growth workforce structures." },
-        { name: "1001–2000 Employees",  price: "4,000",  desc: "Dedicated resources for large SMB organizations." },
-        { name: "Above 2000 Employees", price: "Contact Sales", desc: "Enterprise scale SLA, databases, and custom API syncs." }
+        { name: "1–25 Employees",      price: "899",   desc: "Perfect for startups and small scale teams." },
+        { name: "26–100 Employees",    price: "2,099",  desc: "Fully featured HRMS toolkit for scaling companies." },
+        { name: "101–250 Employees",   price: "3,449",  desc: "Comprehensive workflows for mid-sized companies." },
+        { name: "251–500 Employees",   price: "6,499",  desc: "Engineered for high-growth workforce structures." },
+        { name: "501–1000 Employees",  price: "7,999",  desc: "Dedicated resources for large SMB organizations." },
+        { name: "1000+ Employees",     price: "Custom Enterprise Pricing", desc: "Enterprise scale SLA, databases, and custom API syncs." }
     ];
 
     function updatePricing(index) {
@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (selectedPrice) {
             selectedPrice.style.opacity = '0';
             setTimeout(() => {
-                if (plan.price === "Contact Sales") {
+                if (plan.price === "Custom Enterprise Pricing") {
                     selectedPrice.textContent = plan.price;
-                    selectedPrice.style.fontSize = '2.2rem';
+                    selectedPrice.style.fontSize = '1.6rem';
                     if (currencySign) currencySign.style.display = 'none';
                     if (periodLabel) periodLabel.style.display = 'none';
                 } else {
@@ -187,7 +187,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     contactTriggers.forEach(btn => {
-        btn.addEventListener('click', () => openModal(demoModal));
+        btn.addEventListener('click', () => {
+            let mailSubject = "Inquiry for Contact Sales - Kylrx AI";
+            
+            // If it is the pricing card CTA, use the plan details
+            if (btn.id === 'pricing-cta-btn' && employeeSlider) {
+                const planIndex = parseInt(employeeSlider.value);
+                const plan = pricingPlans[planIndex];
+                if (plan) {
+                    mailSubject = `Inquiry for Kylrx AI All-in-One Automation Plan (${plan.name})`;
+                }
+            }
+            
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info.kylrxai@gmail.com&su=${encodeURIComponent(mailSubject)}`;
+            window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+        });
+    });
+
+    // --- Book Demo Intercept for Gmail compose ---
+    const demoButtons = document.querySelectorAll('a[href="demo.html"]');
+    demoButtons.forEach(btn => {
+        if (btn.classList.contains('btn')) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const mailSubject = encodeURIComponent("Inquiry for Book Demo - Kylrx AI");
+                const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info.kylrxai@gmail.com&su=${mailSubject}`;
+                window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+            });
+        }
     });
 
 

@@ -4,32 +4,32 @@
 
 /* Design Tokens & Variables */
 :root {
-    --primary: #4DA6FF;
-    --primary-hover: #1E94FF;
-    --primary-light: #EAF4FF;
-    --secondary: #EAF4FF;
+    --primary: #3B82F6;
+    --primary-hover: #2563EB;
+    --primary-light: rgba(59, 130, 246, 0.08);
+    --secondary: #F1F5F9;
     --background: #FFFFFF;
-    --card-bg: #F4FAFF;
+    --card-bg: rgba(248, 250, 252, 0.85);
     --text-color: #0F172A;
-    --text-muted: #64748B;
-    --accent-gradient: linear-gradient(135deg, #4DA6FF 0%, #7CC4FF 100%);
-    --gradient-hover: linear-gradient(135deg, #1E94FF 0%, #4DA6FF 100%);
+    --text-muted: #475569;
+    --accent-gradient: linear-gradient(135deg, #3B82F6 0%, #0EA5E9 100%);
+    --gradient-hover: linear-gradient(135deg, #2563EB 0%, #0284C7 100%);
     --border-color: #E2E8F0;
-    --border-light: rgba(77, 166, 255, 0.15);
+    --border-light: rgba(59, 130, 246, 0.15);
     
     /* System States */
     --success: #10B981;
-    --success-light: #D1FAE5;
+    --success-light: rgba(16, 185, 129, 0.08);
     --warning: #F59E0B;
-    --warning-light: #FEF3C7;
+    --warning-light: rgba(245, 158, 11, 0.08);
     --danger: #EF4444;
-    --danger-light: #FEE2E2;
+    --danger-light: rgba(239, 68, 68, 0.08);
 
     /* Shadow & Effects */
-    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
-    --shadow-md: 0 8px 16px -4px rgba(15, 23, 42, 0.04), 0 4px 8px -2px rgba(15, 23, 42, 0.02);
-    --shadow-lg: 0 20px 32px -8px rgba(15, 23, 42, 0.06), 0 8px 16px -4px rgba(15, 23, 42, 0.03);
-    --shadow-xl: 0 32px 64px -16px rgba(15, 23, 42, 0.1), 0 16px 32px -8px rgba(15, 23, 42, 0.05);
+    --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.03);
+    --shadow-md: 0 10px 25px -5px rgba(59, 130, 246, 0.05), 0 8px 16px -6px rgba(59, 130, 246, 0.03);
+    --shadow-lg: 0 20px 40px -10px rgba(59, 130, 246, 0.08), 0 10px 20px -8px rgba(59, 130, 246, 0.04);
+    --shadow-xl: 0 35px 70px -15px rgba(59, 130, 246, 0.12), 0 15px 30px -10px rgba(59, 130, 246, 0.06);
     
     /* Layout */
     --radius-sm: 8px;
@@ -209,10 +209,10 @@ a {
 
 /* Glassmorphism Cards */
 .glass-card {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(77, 166, 255, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.12);
     box-shadow: var(--shadow-lg);
     border-radius: var(--radius-lg);
 }
@@ -226,10 +226,10 @@ a {
     left: 0;
     width: 100%;
     height: 80px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.08);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -272,7 +272,8 @@ a {
     color: var(--text-muted);
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
     color: var(--primary);
 }
 
@@ -294,17 +295,17 @@ a {
 .mobile-drawer {
     position: fixed;
     top: 0;
-    right: -100%;
+    left: -100%;
     width: 100%;
     height: 100vh;
     z-index: 1000;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     transition: var(--transition);
 }
 
 .mobile-drawer.open {
-    right: 0;
+    left: 0;
 }
 
 .drawer-overlay {
@@ -357,7 +358,8 @@ a {
     padding-bottom: 0.75rem;
 }
 
-.drawer-link:hover {
+.drawer-link:hover,
+.drawer-link.active {
     color: var(--primary);
     padding-left: 5px;
 }
@@ -375,7 +377,7 @@ a {
 .hero-section {
     padding-top: 160px;
     padding-bottom: 80px;
-    background: radial-gradient(circle at 80% 20%, rgba(77, 166, 255, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
+    background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.06) 0%, rgba(255, 255, 255, 0) 60%);
     position: relative;
 }
 
@@ -1481,7 +1483,7 @@ a {
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -2210,6 +2212,10 @@ a {
 }
 
 @media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+    }
+    
     .desktop-nav {
         display: none;
     }
@@ -2220,6 +2226,47 @@ a {
     
     .mobile-menu-toggle {
         display: block;
+    }
+    
+    .hero-graphic-container {
+        display: none;
+    }
+    
+    .hero-text-content {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .hero-section {
+        padding-top: 110px;
+        padding-bottom: 40px;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .modules-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        border-radius: var(--radius-md);
+        gap: 0.5rem;
+        padding: 0.75rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .tab-btn {
+        flex: 1 1 calc(50% - 0.5rem);
+        min-width: 120px;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        text-align: center;
+        border-radius: 50px;
     }
     
     .section-title {
@@ -2270,7 +2317,7 @@ a {
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 2.25rem;
+        font-size: 1.85rem;
     }
     
     .hero-actions {
