@@ -48,6 +48,8 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
     font-size: 16px;
 }
 
@@ -2218,6 +2220,11 @@ a {
     
     .desktop-nav {
         display: none;
+    }
+    
+    .badge {
+        white-space: normal;
+        text-align: left;
     }
     
     .header-ctas {
