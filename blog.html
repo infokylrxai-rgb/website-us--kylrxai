@@ -486,10 +486,21 @@
                 const dateDay = 1 + (index * 7) % 28;
                 const readTime = 3 + (index * 2) % 6; // 3 to 8 min read
 
+                const imageVariations = [
+                    'assets/blog_img_1.png',
+                    'assets/blog_img_2.png',
+                    'assets/blog_img_3.png',
+                    'assets/blog_img_4.png',
+                    'assets/blog_img_5.png',
+                    'assets/blog_img_6.png'
+                ];
+                let imageUrl = imageVariations[index % imageVariations.length];
+
                 return {
                     id: index + 1,
                     category: item.c,
                     title: item.t,
+                    image: imageUrl,
                     summary: `An in-depth evaluation on how to implement ${item.t.toLowerCase()} inside modern enterprise configurations. This guide details operational safeguards, system setups, and efficiency metrics.`,
                     content: `
                         <p>In today's fast-moving enterprise workspace, the implementation of <strong>${item.t}</strong> represents a key milestone in operational efficiency and technology-first human resources scaling.</p>
@@ -556,7 +567,11 @@
                 modalAvatar.textContent = article.authorInitials;
                 modalName.textContent = article.author;
                 modalMeta.textContent = `${article.date} • ${article.readTime}`;
-                modalBody.innerHTML = article.content;
+                modalBody.innerHTML = `
+                    <div class="blog-reader-cover" style="margin-bottom: 2rem;">
+                        <img src="${article.image}" alt="${article.title}" class="blog-reader-cover-img" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-md);">
+                    </div>
+                ` + article.content;
 
                 readerModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
@@ -615,6 +630,9 @@
                     const card = document.createElement('article');
                     card.className = 'blog-card';
                     card.innerHTML = `
+                        <div class="blog-card-image-wrapper">
+                            <img src="${article.image}" alt="${article.title}" class="blog-card-image" style="width: 100%; height: 200px; object-fit: cover; border-top-left-radius: var(--radius-md); border-top-right-radius: var(--radius-md); border-bottom: 1px solid var(--border-color);">
+                        </div>
                         <div class="blog-card-body">
                             <span class="badge blog-card-badge">${article.category}</span>
                             <h3 class="blog-card-title">${article.title}</h3>
