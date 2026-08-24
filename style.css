@@ -1315,6 +1315,230 @@ a {
     color: var(--text-muted);
 }
 
+/* Modular Mockup: No-Code Workflow Builder */
+.workflow-canvas {
+    background: #FAFAFA;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    position: relative;
+}
+
+.wf-node {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 0.9rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.wf-node:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.wf-node.wf-trigger {
+    border-left: 3px solid var(--primary);
+}
+
+.wf-node.wf-condition {
+    border-left: 3px solid var(--warning);
+}
+
+.wf-node-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+.wf-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.wf-badge.trigger {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.wf-badge.condition {
+    background: var(--warning-light);
+    color: var(--warning);
+}
+
+.wf-status {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.wf-status.active {
+    color: var(--success);
+}
+
+.wf-live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--success);
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+}
+
+.wf-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.wf-node-body {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.wf-icon-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: var(--primary-light);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.wf-icon-box.orange {
+    background: var(--warning-light);
+    color: var(--warning);
+}
+
+.wf-node-text strong {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.wf-node-text p {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.wf-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 18px;
+    color: var(--primary);
+}
+
+.wf-connector .wf-line {
+    width: 2px;
+    height: 10px;
+    background: var(--primary);
+    opacity: 0.4;
+}
+
+.wf-arrow-icon {
+    margin-top: -2px;
+    opacity: 0.7;
+    fill: var(--primary);
+}
+
+.wf-branches {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.wf-branch-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.wf-branch-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 0.15rem 0.3rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.wf-branch-badge.success {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.wf-branch-badge.info {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.wf-node.mini {
+    padding: 0.5rem;
+}
+
+.wf-action-content {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.wf-action-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.wf-action-icon.green {
+    background: var(--success-light);
+    color: var(--success);
+}
+
+.wf-action-icon.blue {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.wf-action-content strong {
+    display: block;
+    font-size: 0.7rem;
+    line-height: 1.2;
+}
+
+.wf-action-content p {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    line-height: 1.1;
+    margin: 0;
+}
+
 /* ==========================================================================
    Pricing Plans Section
    ========================================================================== */
