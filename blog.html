@@ -8,7 +8,9 @@
         content="Read articles and compliance guides on AI HRMS portals, automated payroll, multi-state tax, and strategic workforce management on the Kylrx AI Blog.">
     <title>Blog & Insights | Kylrx AI</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/favicon.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +26,8 @@
     <header class="site-header">
         <div class="container header-container">
             <a href="index.html" class="logo" id="header-logo">
-                <img src="assets/logo.png" alt="Kylrx AI" class="header-logo-img" />
+                <img src="assets/favicon.png" alt="Kylrx AI" class="header-logo-img" />
+                <span class="logo-text">Kylrx <span class="text-gradient">AI</span></span>
             </a>
 
             <nav class="desktop-nav" aria-label="Main Navigation">
@@ -59,7 +62,8 @@
         <div class="drawer-content">
             <div class="drawer-header">
                 <a href="index.html" class="logo">
-                    <img src="assets/logo.png" alt="Kylrx AI" class="header-logo-img" />
+                    <img src="assets/favicon.png" alt="Kylrx AI" class="header-logo-img" />
+                    <span class="logo-text">Kylrx <span class="text-gradient">AI</span></span>
                 </a>
                 <button class="drawer-close" id="drawer-close" aria-label="Close Menu">
                     <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
@@ -155,6 +159,7 @@
                 </svg>
             </button>
             <div class="blog-reader-header">
+                <div class="modal-cover-photo" id="modal-cover-photo"></div>
                 <span class="badge" id="modal-category-badge" style="margin-bottom: 0.75rem;">AI & Automation</span>
                 <h2 id="modal-article-title" style="font-size: 1.8rem; font-weight: 800; line-height: 1.3;">Article Title</h2>
                 <div class="blog-author-block" style="border: none; padding: 0; margin-top: 1.25rem;">
@@ -260,7 +265,8 @@
             <div class="footer-top">
                 <div class="footer-brand">
                     <div class="footer-logo-wrap">
-                        <img src="assets/logo.png" alt="Kylrx AI" class="footer-logo" />
+                        <img src="assets/favicon.png" alt="Kylrx AI" class="footer-logo" />
+                        <span class="footer-brand-name">Kylrx <span class="text-gradient">AI</span></span>
                     </div>
                     <p class="footer-desc">AI-powered HRMS platform built for modern enterprises. Automate HR, boost
                         productivity, and stay compliant — effortlessly.</p>
@@ -486,21 +492,10 @@
                 const dateDay = 1 + (index * 7) % 28;
                 const readTime = 3 + (index * 2) % 6; // 3 to 8 min read
 
-                const imageVariations = [
-                    'assets/blog_img_1.png',
-                    'assets/blog_img_2.png',
-                    'assets/blog_img_3.png',
-                    'assets/blog_img_4.png',
-                    'assets/blog_img_5.png',
-                    'assets/blog_img_6.png'
-                ];
-                let imageUrl = imageVariations[index % imageVariations.length];
-
                 return {
                     id: index + 1,
                     category: item.c,
                     title: item.t,
-                    image: imageUrl,
                     summary: `An in-depth evaluation on how to implement ${item.t.toLowerCase()} inside modern enterprise configurations. This guide details operational safeguards, system setups, and efficiency metrics.`,
                     content: `
                         <p>In today's fast-moving enterprise workspace, the implementation of <strong>${item.t}</strong> represents a key milestone in operational efficiency and technology-first human resources scaling.</p>
@@ -530,7 +525,8 @@
                     author: author.name,
                     authorInitials: author.init,
                     date: `${dateMonth} ${dateDay}, 2026`,
-                    readTime: `${readTime} min read`
+                    readTime: `${readTime} min read`,
+                    image: `assets/blog_img_${(index % 6) + 1}.png`
                 };
             });
 
@@ -561,17 +557,16 @@
 
             // Open Reader Modal
             function openReader(article) {
+                const modalCoverPhoto = document.getElementById('modal-cover-photo');
+                if (modalCoverPhoto) modalCoverPhoto.style.backgroundImage = `url('${article.image}')`;
+                
                 modalBadge.textContent = article.category;
                 // Add specific styles depending on the category for badge styling
                 modalTitle.textContent = article.title;
                 modalAvatar.textContent = article.authorInitials;
                 modalName.textContent = article.author;
                 modalMeta.textContent = `${article.date} • ${article.readTime}`;
-                modalBody.innerHTML = `
-                    <div class="blog-reader-cover" style="margin-bottom: 2rem;">
-                        <img src="${article.image}" alt="${article.title}" class="blog-reader-cover-img" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--radius-md);">
-                    </div>
-                ` + article.content;
+                modalBody.innerHTML = article.content;
 
                 readerModal.classList.add('active');
                 document.body.style.overflow = 'hidden';
@@ -630,9 +625,7 @@
                     const card = document.createElement('article');
                     card.className = 'blog-card';
                     card.innerHTML = `
-                        <div class="blog-card-image-wrapper">
-                            <img src="${article.image}" alt="${article.title}" class="blog-card-image" style="width: 100%; height: 200px; object-fit: cover; border-top-left-radius: var(--radius-md); border-top-right-radius: var(--radius-md); border-bottom: 1px solid var(--border-color);">
-                        </div>
+                        <img src="${article.image}" class="blog-card-img" alt="Blog thumbnail">
                         <div class="blog-card-body">
                             <span class="badge blog-card-badge">${article.category}</span>
                             <h3 class="blog-card-title">${article.title}</h3>

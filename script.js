@@ -548,7 +548,49 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize document modal triggers
     initDocModal();
 
+    // KylrxAI Launch Campaign - Interactive Coupon Code Copy
+    const initLaunchOfferInteractions = () => {
+        const copyBtns = document.querySelectorAll('.coupon-copy-btn');
+        const couponCode = 'KYLRXLAUNCH20';
+
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                e.preventDefault();
+                const textSpan = btn.querySelector('.copy-btn-text') || btn.querySelector('#copy-btn-text');
+                const originalText = textSpan ? textSpan.textContent : 'Copy Code';
+
+                try {
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        await navigator.clipboard.writeText(couponCode);
+                    } else {
+                        const textarea = document.createElement('textarea');
+                        textarea.value = couponCode;
+                        textarea.style.position = 'fixed';
+                        textarea.style.opacity = '0';
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textarea);
+                    }
+
+                    btn.classList.add('copied');
+                    if (textSpan) textSpan.textContent = 'Copied!';
+
+                    setTimeout(() => {
+                        btn.classList.remove('copied');
+                        if (textSpan) textSpan.textContent = originalText;
+                    }, 2500);
+                } catch (err) {
+                    console.error('Failed to copy coupon code', err);
+                }
+            });
+        });
+    };
+
+    initLaunchOfferInteractions();
+
     // Trigger stat counters animation on load
     setTimeout(animateStatsCounter, 800);
 
 });
+
