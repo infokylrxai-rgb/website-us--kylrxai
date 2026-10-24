@@ -154,7 +154,7 @@
                     <!-- Main Video Player Card -->
                     <div class="video-player-card">
                         <div class="video-wrapper">
-                            <video id="main-video-player" controls preload="auto" poster="assets/logo.jpg">
+                            <video id="main-video-player" controls preload="metadata" poster="assets/logo.jpg">
                                 <source id="video-source" src="videos/admin/admin(sign up and login).mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -730,8 +730,8 @@
             };
 
             // Switch Video
-            function loadVideo(category, index) {
-                const video = videoData[category][index];
+            function loadVideo(category, index, autoPlay = true) {
+                const video = videoData[category] && videoData[category][index];
                 if (!video) return;
 
                 currentCategory = category;
@@ -746,13 +746,19 @@
                 player.style.opacity = '0.3';
                 
                 setTimeout(() => {
-                    playerSource.src = video.file;
+                    const encodedSrc = encodeURI(video.file);
+                    playerSource.src = encodedSrc;
                     player.load();
                     
-                    // Auto play the video
-                    player.play().catch(err => {
-                        console.log("Auto-play blocked by browser, waiting for user interaction.");
-                    });
+                    // Only attempt autoplay if triggered by explicit user interaction
+                    if (autoPlay) {
+                        const playPromise = player.play();
+                        if (playPromise !== undefined) {
+                            playPromise.catch(err => {
+                                console.debug("Autoplay deferred awaiting direct interaction:", err?.message || err);
+                            });
+                        }
+                    }
 
                     playerTitle.textContent = video.title;
                     playerDesc.textContent = video.desc;
@@ -786,7 +792,7 @@
                     `;
 
                     card.addEventListener('click', () => {
-                        loadVideo(category, index);
+                        loadVideo(category, index, true);
                         // Scroll to player smoothly on smaller devices
                         if (window.innerWidth < 992) {
                             player.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -807,15 +813,15 @@
                     tabButtons.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
 
-                    // Render playlist & load first video
+                    // Render playlist & load first video without forced autoplay
                     renderPlaylist(cat);
-                    loadVideo(cat, 0);
+                    loadVideo(cat, 0, false);
                 });
             });
 
-            // Initialize Demo Center
+            // Initialize Demo Center (prepare initial video preview without forced autoplay)
             renderPlaylist('admin');
-            loadVideo('admin', 0);
+            loadVideo('admin', 0, false);
         });
     </script>
 </body>
