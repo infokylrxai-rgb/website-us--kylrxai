@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (mobileToggle) mobileToggle.addEventListener('click', openDrawer);
     if (drawerClose) drawerClose.addEventListener('click', closeDrawer);
     if (drawerOverlay) drawerOverlay.addEventListener('click', closeDrawer);
-    
+
     drawerLinks.forEach(link => {
         link.addEventListener('click', closeDrawer);
     });
@@ -62,12 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Pricing Bands — exact tiers as specified
     const pricingPlans = [
-        { name: "1–25 Employees",      price: "899",   desc: "Perfect for startups and small scale teams." },
-        { name: "26–100 Employees",    price: "2,099",  desc: "Fully featured HRMS toolkit for scaling companies." },
-        { name: "101–250 Employees",   price: "3,449",  desc: "Comprehensive workflows for mid-sized companies." },
-        { name: "251–500 Employees",   price: "6,499",  desc: "Engineered for high-growth workforce structures." },
-        { name: "501–1000 Employees",  price: "7,999",  desc: "Dedicated resources for large SMB organizations." },
-        { name: "1000+ Employees",     price: "Custom Enterprise Pricing", desc: "Enterprise scale SLA, databases, and custom API syncs." }
+        { name: "1000+ Employees", price: "Custom Enterprise Pricing", desc: "Enterprise scale SLA, databases, and custom API syncs." }
     ];
 
     function updatePricing(index) {
@@ -173,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal(modal) {
         modal.classList.remove('active');
         document.body.style.overflow = '';
-        
+
         // Reset forms inside the modal
         const form = modal.querySelector('form');
         const successState = modal.querySelector('.form-success-state');
@@ -189,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactTriggers.forEach(btn => {
         btn.addEventListener('click', () => {
             let mailSubject = "Inquiry for Contact Sales - Kylrx AI";
-            
+
             // If it is the pricing card CTA, use the plan details
             if (btn.id === 'pricing-cta-btn' && employeeSlider) {
                 const planIndex = parseInt(employeeSlider.value);
@@ -198,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     mailSubject = `Inquiry for Kylrx AI All-in-One Automation Plan (${plan.name})`;
                 }
             }
-            
+
             const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info.kylrxai@gmail.com&su=${encodeURIComponent(mailSubject)}`;
             window.open(gmailUrl, '_blank', 'noopener,noreferrer');
         });
@@ -256,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         activeTickerIndex = (activeTickerIndex + 1) % tickerItems.length;
         const nextItem = tickerItems[activeTickerIndex];
-        
+
         // Prepare next element entry
         nextItem.classList.remove('exit');
         nextItem.classList.add('active');
@@ -278,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const target = parseFloat(container.getAttribute('data-target'));
             let current = 0;
             const step = target / 50; // animates over ~50 steps
-            
+
             // Checks if it is a percentage or absolute value
             const isPercent = container.textContent.includes('%');
 
@@ -305,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeBtn = document.getElementById('docModalClose');
         const modalTitle = document.getElementById('docModalTitle');
         const modalContent = document.getElementById('docModalContent');
-        
+
         if (!modal || !overlay || !closeBtn || !modalTitle || !modalContent) return;
 
         // Rich premium content database
@@ -489,11 +484,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             modalTitle.textContent = docData.title;
             modalContent.innerHTML = docData.html;
-            
+
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden'; // Prevent page scroll
-            
+
             // Auto-focus dynamic apply or close button
             const firstFocusable = modalContent.querySelector('button') || closeBtn;
             firstFocusable.focus();
@@ -536,7 +531,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Event Listeners for closing modal
         closeBtn.addEventListener('click', closeModal);
         overlay.addEventListener('click', closeModal);
-        
+
         // Close on Escape key press
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('active')) {
